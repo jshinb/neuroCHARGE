@@ -4,20 +4,16 @@ This is for neuroCHARGE scripts distributed to the study cohorts for R2 calculat
 
 ## I could have done
 * Get bootstrap 95% CIs
-**Metabolomic studies of white matter hyperintensities and microstructural properties of the brain**
 
+## **Metabolomic studies of white matter hyperintensities and microstructural properties of the brain**
 **Analysis plan, NeuroCHARGE Consortium**
 
-Jean Shin (jean.shin@sickkids.ca)
-
-Eeva Sliz (eeva.sliz@oulu.fi)
-
-Tomas Paus (tpausresearch@gmail.com)
-
+Jean Shin (jean.shin@sickkids.ca),
+Eeva Sliz (eeva.sliz@oulu.fi),
+Tomas Paus (tpausresearch@gmail.com),
 Zdenka Pausova (zdenka.pausova@sickkids.ca)
 
 University of Toronto
-
 Version: 2019-OCT-01-v1
 
 **Aim**
