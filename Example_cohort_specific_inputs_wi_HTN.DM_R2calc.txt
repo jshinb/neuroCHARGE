@@ -1,0 +1,80 @@
+# ------------------------------ COHORT-SPECIFIC INFORMATION --------------------------- #
+# Analyst information for contact
+analyst = "Jean Shin"
+analyst_email = "jean.shin@sickkids.ca" 
+analysis_date = "2021-10-20"
+
+# ---------------------------------------  FILES --------------------------------------- #
+# Study information
+cohort_name = "FHS.R2calc"
+ancestry = "EUR"
+WMH_based_on = "T1"                 #T2, T2* or T1
+platforms = "broad"                 #platform_version e.g., c("nightingale_2016","metabolon_TrueMassComplexLipidPanel")
+biosamples =  "serum"               #serum or plasma; same order as 'platforms' e.g., c("serum","serum")
+
+# data file names, delimited: All files must be **tab-delimited**, and missing values must be coded as **NA**
+BrainDataFile = 'input_FHS_brain_data.csv'
+MetaboDataFiles = 'input_FHS_broad_data.csv'
+CovDataFile = 'input_FHS_Cov_data_wi_HTN.DM.csv'
+kinMatrixFile = 'kmat.Rdata'      #object name must be 'kmat' 
+
+# file(s) containing the list(s) of metabolite variable names 
+MetaboListFiles = 'input_broad_metaboID.txt' #same order as 'platforms
+
+# ----------------------------------- COLUMN NAMES  ------------------------------------ #
+# column name for ID variable for **all** 'three' types of files: BrainDataFile, MetaboDataFiles, CovDataFile
+IID = "newid"
+FID = "famid"
+
+# column names for brain outcomes and ICV/Brain Size (put NA if unavailable)
+WMH = "hippo_pct"                    #simulation
+ICV_or_BrainSize = "total_brain_pct" #simulation
+
+# column names for covariates
+age = 'AGE'
+sex = 'SEX'
+years = NA                     #NA if biosample and MRI data were obtained on the same day for all participants
+fasting_duration = NA             #NA if unavailable or all participants had fasted for the same duration
+statin_use = 'on_statin'
+other_lipid_lowering_med_use = 'on_other_med'
+BMI = 'BMI'
+current_smoking = 'smoking'
+eGFR = 'eGFR'
+
+# column names of cohort-specific covariates (**one vector per platform**): 
+# e.g., NULL if none exists or list(c('Batch','mri_scanner'),'mri_scanner')
+cohort_specific_cov_list = 'Batch'
+
+# ------------------------------ CODINGS FOR BINARY VARIABLES --------------------------- #
+# codings for 'binary' variables to be used for stratified analyses (NA for unavailable variables)
+# sex
+code_male = 1
+code_female = 2
+
+# statin-use
+code_on_statin = 1
+code_not_on_statin = 0
+
+# non-statin-medication
+code_on_other_lipid_lowering_med = 1
+code_not_on_other_lipid_lowering_med = 0
+
+# current smoking status
+code_current_smoking_yes = 1
+code_current_smoking_no = 0
+
+# -------------------------------- HYPERTENSION STATUS -------------------------------- #
+hypertension ='HTN'          #
+code_hypertensive_yes = 1#
+code_hypertensive_no =  0#
+
+# ----------------------------- DIABETES-MELLITUS STATUS ------------------------------ #
+diabetes ='DM'          #
+code_diabetes_yes = 1#
+code_diabetes_no =  0#
+
+# ----- Times for MRI and blood draw --------------------------------------------------- #
+measured.first = 'MRI'# 'MRI', 'blood', 'same.time' or 'varies'
+
+# ----- MetaboID for R2 calculation ---------------------------------------------------- #
+metaboID = "cmh_hydroxyp_acetate"#"Hydroxyphenylpyruvate"
