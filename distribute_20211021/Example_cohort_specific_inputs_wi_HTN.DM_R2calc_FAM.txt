@@ -78,3 +78,6 @@ measured.first = 'MRI'# 'MRI', 'blood', 'same.time' or 'varies'
 
 # ----- MetaboID for R2 calculation ---------------------------------------------------- #
 metaboID = "cmh_hydroxyp_acetate"#"Hydroxyphenylpyruvate"
+
+#------- Please upload the result files to the CHARGE google drive: ---------------------#
+https://drive.google.com/drive/folders/10VNu8hSHMWgDWUAFlmJ38qurltrDv8fK
