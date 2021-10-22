@@ -1,0 +1,75 @@
+# ----- COHORT-SPECIFIC INFORMATION ---------------------------------------------------- #
+# Analyst information for contact
+analyst = "Jean Shin"
+analyst_email = "jean.shin@sickkids.ca" 
+analysis_date = "2021-05-13"
+
+# Study information
+cohort_name = "SYS_HTN.DM_EUR"
+ancestry = "EUR"
+WMH_based_on = "T1"                 #T2, T2* or T1
+platforms = c("nightingale_2016","metabolon_TrueMassComplexLipidPanel") #platform_version for all platfomrs e.g., c("nightingale_2016","")
+biosamples = c("serum","serum") #serum or plasma; same order as 'platforms' e.g., c("serum","serum")
+
+# -----  FILES ------------------------------------------------------------------------- #
+# data file names, delimited: All files must be **tab-delimited**, and missing values must be coded as **NA**
+BrainDataFile = 'input_WMH_ICV_data_2019-09-16.tsv'
+MetaboDataFiles = c('input_SYS_nightingale_data.tsv','input_SYS_metabolon_data.tsv')
+CovDataFile = 'input_SYS_Cov_data_wi_DM.tsv'
+
+# file(s) containing the list(s) of metabolite variable names 
+MetaboListFiles = c("input_Nightingale_metaboID.txt","input_Metabolon_metaboID.txt")  #same order as 'platforms
+ 
+# ----- COLUMN NAMES  ------------------------------------------------------------------ #
+# column name for ID variable for **all** 'three' types of files: BrainDataFile, MetaboDataFiles, CovDataFile
+IID = "uniqueID"
+	
+# column names for brain outcomes and ICV/Brain Size (put NA if unavailable)
+WMH = "WM.hypointensities_volume"
+ICV_or_BrainSize = "Brain"
+
+# column names for covariates 
+age = 'age_years'
+sex = 'Sex'
+years = NA               #NA if biosample and MRI data were obtained on the same day for all participants
+fasting_duration = NA    #NA if unavailable or all participants had fasted for the same duration
+statin_use = "OnStatin"
+other_lipid_lowering_med_use = "OnOtherMed"
+BMI = "BMI"
+current_smoking = "current_smoking_Wave2SmokingStatus2"
+eGFR = "eGFR_nigtingale_crea"
+
+# column names of cohort-specific covariates (one vector per platform): put NULL if none exists
+#cohort_specific_cov_list = list(c('mri_scanner','Batch'),'mri_scanner')
+cohort_specific_cov_list = NULL
+
+# ----- CODINGS FOR BINARY VARIABLES --------------------------------------------------- #
+# codings for 'categorical' variables to be used for stratified analyses (NA for unavailable variables)
+# sex
+code_male = 0
+code_female = 1 
+
+# statin-use
+code_on_statin = TRUE
+code_not_on_statin = FALSE
+
+# non-statin-medication
+code_on_other_lipid_lowering_med = TRUE
+code_not_on_other_lipid_lowering_med = FALSE
+
+# current smoking status
+code_current_smoking_yes = TRUE
+code_current_smoking_no = FALSE
+
+# ----- HYPERTENSION STATUS ----------------------------------------------------------- #
+hypertension =  'hypertension'
+code_hypertensive_yes = TRUE# value for 'hypertensive' individual
+code_hypertensive_no = FALSE# value for 'non-hypertensive' individual
+
+# ----- Diabetes Mellitus STATUS ------------------------------------------------------- #
+diabetes =  'DM'
+code_diabetes_yes = 'yes'# value for individual with DM
+code_diabetes_no = 'no'# value for individual without DM
+
+# ----- Times for MRI and blood draw --------------------------------------------------- #
+measured.first= 'same.time' # 'MRI', 'blood' or 'same.time'

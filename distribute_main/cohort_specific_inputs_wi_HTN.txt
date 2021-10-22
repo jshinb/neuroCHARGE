@@ -1,0 +1,68 @@
+# ------------------------------ COHORT-SPECIFIC INFORMATION --------------------------- #
+# Analyst information for contact
+analyst = 
+analyst_email = 
+analysis_date = 
+
+# Study information
+cohort_name = 
+ancestry = 
+WMH_based_on =                  #T2, T2* or T1
+platforms =                     #platform_version e.g., c("nightingale_2016","metabolon_TrueMassComplexLipidPanel")
+biosamples =                    #serum or plasma; same order as 'platforms' e.g., c("serum","serum")
+
+# ---------------------------------------  FILES --------------------------------------- #
+# data file names, delimited: All files must be **tab-delimited**, and missing values must be coded as **NA**
+BrainDataFile = 
+MetaboDataFiles = 
+CovDataFile = 
+
+# file(s) containing the list(s) of metabolite variable names 
+MetaboListFiles =               #same order as 'platforms
+
+# ----------------------------------- COLUMN NAMES  ------------------------------------ #
+# column name for ID variable for **all** 'three' types of files: BrainDataFile, MetaboDataFiles, CovDataFile
+IID = 
+
+# column names for brain outcomes and ICV/Brain Size (put NA if unavailable)
+WMH = 
+ICV_or_BrainSize = 
+
+# column names for covariates
+age = 
+sex = 
+years =                         #NA if biosample and MRI data were obtained on the same day for all participants
+fasting_duration =              #NA if unavailable or all participants had fasted for the same duration
+statin_use = 
+other_lipid_lowering_med_use = 
+BMI = 
+current_smoking = 
+eGFR = 
+
+# column names of cohort-specific covariates (**one vector per platform**): 
+# e.g., NULL if none exists or list(c('Batch','mri_scanner'),'mri_scanner')
+cohort_specific_cov_list = 
+
+# ------------------------------ CODINGS FOR BINARY VARIABLES --------------------------- #
+# codings for 'binary' variables to be used for stratified analyses (NA for unavailable variables)
+# sex
+code_male = 
+code_female = 
+
+# statin-use
+code_on_statin = 
+code_not_on_statin = 
+
+# non-statin-medication
+code_on_other_lipid_lowering_med = 
+code_not_on_other_lipid_lowering_med = 
+
+# current smoking status
+code_current_smoking_yes = 
+code_current_smoking_no = 
+
+# ------------------------------ For the additional analyses (lines) --------------------------- #
+# hypertension-status
+hypertension =  # COLUMN NAME
+code_hypertensive_yes = # value for 'hypertnesive' individual
+code_hypertensive_no = # value for 'non-hypertensive' individual
