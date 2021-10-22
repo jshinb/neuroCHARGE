@@ -164,7 +164,7 @@ for(metaboi in 1:length(platforms)){
   metaboID_ind = metaboID_ordered == metaboID
   
   if(!any(metaboID_ind)){
-    cat(paste(metaboID,"is not available.\n"),file=file.path(metabo_outfolder,"R2_results.txt"))
+    cat(paste(metaboID,"is not available.\n"),file=outfile)
   }else if(sum(metaboID_ind)>1){
     stop(paste(sum(metaboID_ordered == metaboID),metaboID,"columns exist: Check the data for duplicated columns.\n"))
   }else{#
@@ -296,47 +296,38 @@ for(metaboi in 1:length(platforms)){
   fit_M4_females = lm(as.formula(mod.list[["M4.HTN.DM"]]),data=dta2,subset=sex=="F")
   
   ## writing output
+  createOut = function(fit,ofile){
+    capture.output(summary(fit),file=ofile,append = TRUE)
+    capture.output(calc.relimp(fit),file=ofile,append = TRUE)
+    r2_res = calc.relimp(fit)$lmg
+    r2_res
+  }
+  outfile=file.path(metabo_outfolder,"R2_results.txt")
+  cat("*--------combined_base--------*\n",file=outfile)
+  r2_combined_base = createOut(fit_M1_combined,outfile)
   #
-  cat("*--------combined_base--------*\n",file=file.path(metabo_outfolder,"R2_results.txt"))
-  capture.output(summary(fit_M1_combined),file=file.path(metabo_outfolder,"R2_results.txt"),append = TRUE)
-  capture.output(calc.relimp(fit_M1_combined),file=file.path(metabo_outfolder,"R2_results.txt"),append = TRUE)
-  r2_combined_base = calc.relimp(fit_M1_combined)$lmg
+  cat("\n*--------combined_full--------*\n",file=outfile,append = TRUE)
+  r2_combined_full = createOut(fit_M2_combined,outfile)
   #
-  cat("\n*--------combined_full--------*\n",file=file.path(metabo_outfolder,"R2_results.txt"),append = TRUE)
-  capture.output(summary(fit_M2_combined),file=file.path(metabo_outfolder,"R2_results.txt"),append = TRUE)
-  capture.output(calc.relimp(fit_M2_combined),file=file.path(metabo_outfolder,"R2_results.txt"),append = TRUE)
-  r2_combined_full = calc.relimp(fit_M2_combined)$lmg
+  cat("\n*--------males_base--------*\n",file=outfile,append = TRUE)
+  r2_males_base = createOut(fit_M3_males,outfile)
   #
-  cat("\n*--------males_base--------*\n",file=file.path(metabo_outfolder,"R2_results.txt"),append = TRUE)
-  capture.output(summary(fit_M3_males),file=file.path(metabo_outfolder,"R2_results.txt"),append = TRUE)
-  capture.output(calc.relimp(fit_M3_males),file=file.path(metabo_outfolder,"R2_results.txt"),append = TRUE)
-  r2_males_base = calc.relimp(fit_M3_males)$lmg
-
+  cat("\n*--------females_base--------*\n",file=outfile,append = TRUE)
+  r2_females_base = createOut(fit_M3_females,outfile)
   #
-  cat("\n*--------females_base--------*\n",file=file.path(metabo_outfolder,"R2_results.txt"),append = TRUE)
-  capture.output(summary(fit_M3_females),file=file.path(metabo_outfolder,"R2_results.txt"),append = TRUE)
-  capture.output(calc.relimp(fit_M3_females),file=file.path(metabo_outfolder,"R2_results.txt"),append = TRUE)
-  r2_females_base = calc.relimp(fit_M3_females)$lmg
-
+  cat("\n*--------males_full--------*\n",file=outfile,append = TRUE)
+  r2_males_full = createOut(fit_M4_males,outfile)
   #
-  cat("\n*--------males_full--------*\n",file=file.path(metabo_outfolder,"R2_results.txt"),append = TRUE)
-  capture.output(summary(fit_M4_males),file=file.path(metabo_outfolder,"R2_results.txt"),append = TRUE)
-  capture.output(calc.relimp(fit_M4_males),file=file.path(metabo_outfolder,"R2_results.txt"),append = TRUE)
-  r2_males_full = calc.relimp(fit_M4_males)$lmg
-  
-  #
-  cat("\n*--------females_full--------*\n",file=file.path(metabo_outfolder,"R2_results.txt"),append = TRUE)
-  capture.output(summary(fit_M4_females),file=file.path(metabo_outfolder,"R2_results.txt"),append = TRUE)
-  capture.output(calc.relimp(fit_M4_females),file=file.path(metabo_outfolder,"R2_results.txt"),append = TRUE)
-  r2_females_full = calc.relimp(fit_M4_females)$lmg
+  cat("\n*--------females_full--------*\n",file=outfile,append = TRUE)
+  r2_females_full = createOut(fit_M4_females,outfile)
   
   # save lmg metrics for all subsets and models
   save(r2_combined_base,r2_combined_full,r2_males_base,r2_males_full,r2_females_base,r2_females_full,
        file=file.path(metabo_outfolder,'r2_lmg_res.Rdata'))
   }
   ## any warnings
-  cat("\n\n",file=file.path(metabo_outfolder,"R2_results.txt"),append = TRUE)
-  capture.output(summary(warnings()),file=file.path(metabo_outfolder,"R2_results.txt"),append=T)
+  cat("\n\n",file=outfile,append = TRUE)
+  capture.output(summary(warnings()),file=outfile,append=T)
 }
 
 capture.output(summary(warnings()),file=paste(outfolder,input_specification_file,sep=""),append=T)
