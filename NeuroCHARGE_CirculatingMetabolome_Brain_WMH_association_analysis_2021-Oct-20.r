@@ -45,9 +45,17 @@ lapply(required.packages,install.packages.if.not.avail)
 lapply(required.packages,require,character.only=T)
 source('calc.relimp.lm.js.r')
 
-# --------------------------------------
+## function to writing output --------------
+createOut = function(fit,ofile){
+  capture.output(summary(fit),file=ofile,append = TRUE)
+  capture.output(calc.relimp(fit),file=ofile,append = TRUE)
+  r2_res = calc.relimp(fit)$lmg
+  r2_res
+}
+
+# ------------------------------------------
 # Create output directory and copy the 'cohort_specific_inputs.txt' file into the output foder
-# --------------------------------------
+# ------------------------------------------
 outfolder = paste(cohort_name,ancestry,sep="_")
 outfolder = paste(outfolder,"/",sep="")
 dir.create(outfolder)
@@ -296,17 +304,6 @@ for(metaboi in 1:length(platforms)){
   fit_M4_males = lm(as.formula(mod.list[["M4.HTN.DM"]]),data=dta2,subset=sex=="M")
   fit_M4_females = lm(as.formula(mod.list[["M4.HTN.DM"]]),data=dta2,subset=sex=="F")
   
-  ## writing output
-  createOut = function(fit,ofile){
-    capture.output(summary(fit),file=ofile,append = TRUE)
-    capture.output(calc.relimp(fit),file=ofile,append = TRUE)
-    r2_res = calc.relimp(fit)$lmg
-    r2_res
-  }
-<<<<<<< HEAD
-=======
-  outfile=file.path(metabo_outfolder,"R2_results.txt")
->>>>>>> main
   cat("*--------combined_base--------*\n",file=outfile)
   r2_combined_base = createOut(fit_M1_combined,outfile)
   #
