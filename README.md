@@ -1,10 +1,12 @@
-# neuroCHARGE
-Distributed neuroCHARGE scripts on October 21, 2021
-This is for neuroCHARGE scripts distributed to the study cohorts for R2 calculations addressing Editor's comment.
-Test the scripts with r scripts with 
-'~/OneDrive - SickKids/neuroCHARGE_BrainMS_CircMetabolism/scripts/neuroCHARGE/distribute_XX/' 
-## I could have done
-* Get bootstrap 95% CIs
+## Notes to myself
+* Test the scripts with r scripts with '~/OneDrive - SickKids/neuroCHARGE_BrainMS_CircMetabolism/scripts/neuroCHARGE/distribute_XX/' 
+
+## distribute_main
+* Distributed scripts for main analyses
+
+## distribute_20211021
+* Distributed scripts for R2 calculations addressing Editor's comment.
+* I _should_ have calculated the bootstrap 95% CIs for relative R2
 
 ## **Metabolomic studies of white matter hyperintensities and microstructural properties of the brain**
 **Analysis plan, NeuroCHARGE Consortium**
