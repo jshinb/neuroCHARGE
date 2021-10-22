@@ -303,6 +303,10 @@ for(metaboi in 1:length(platforms)){
     r2_res = calc.relimp(fit)$lmg
     r2_res
   }
+<<<<<<< HEAD
+=======
+  outfile=file.path(metabo_outfolder,"R2_results.txt")
+>>>>>>> main
   cat("*--------combined_base--------*\n",file=outfile)
   r2_combined_base = createOut(fit_M1_combined,outfile)
   #
