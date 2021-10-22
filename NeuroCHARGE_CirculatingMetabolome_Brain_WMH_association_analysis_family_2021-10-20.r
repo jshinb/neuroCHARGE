@@ -174,12 +174,13 @@ add.diabetes = "diabetes"[!is.na(diabetes)]
 #Indicate the column names of metabolites
 metabo_list_file=paste(WorkingDirectory,MetaboListFiles,sep="/")
 ## 
-outfile=file.path(metabo_outfolder,"R2_results.txt")
 for(metaboi in 1:length(platforms)){
   metabo_outfolder = paste(outfolder,platforms[metaboi],"_",biosamples[metaboi],"/",sep="")
   dir.create(metabo_outfolder)
   metaboID_ordered <- read.table(metabo_list_file[metaboi],stringsAsFactors = F)[,1]
   metaboID_ind = metaboID_ordered == metaboID
+  
+  outfile=file.path(metabo_outfolder,"R2_results.txt")
   if(!any(metaboID_ind)){
     cat(paste(metaboID,"is not available.\n"),file=outfile)
   }else if(sum(metaboID_ind)>1){
