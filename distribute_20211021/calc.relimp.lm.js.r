@@ -2,6 +2,7 @@
 calc.relimp.lm.js <- function (object, type = "lmg", groups = NULL, groupnames = NULL, 
           always = NULL, ...) 
 {
+  require(relaimpo)
   lm <- object
   if (missing(lm)) 
     stop("object missing or incorrect")
