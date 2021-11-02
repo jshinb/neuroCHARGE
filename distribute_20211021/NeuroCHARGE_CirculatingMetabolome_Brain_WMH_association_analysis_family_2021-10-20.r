@@ -258,7 +258,7 @@ for(metaboi in 1:length(platforms)){
     check.metabo_colnames = all(metaboID_ordered %in% metabodata_colnames)
     if(!check.metabo_colnames) {
       stop("\n The column names of the \'",MetaboDataFiles[metaboi], "\' do not match those in \'",
-           MetaboDataFiles[metaboi],"\': Please check!",sep="")
+           MetaboListFiles[metaboi],"\': Please check!",sep="")
     }
     
     ## merge data
