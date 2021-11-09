@@ -1,1 +1,250 @@
-
+tmpID	Field ID	Description	abbreviation	machine_readable_name	name	description	alternative_names	group	subgroup
+3-hydroxybutyrate	23474	3-Hydroxybutyrate	bOHbutyrate	bOHbutyrate	3-Hydroxybutyrate	3-Hydroxybutyrate		Ketone bodies	Ketone bodies
+acetate	23475	Acetate	Acetate	Acetate	Acetate	Acetate		Ketone bodies	Ketone bodies
+acetoacetate	23476	Acetoacetate	Acetoacetate	Acetoacetate	Acetoacetate	Acetoacetate		Ketone bodies	Ketone bodies
+acetone	23477	Acetone	Acetone	Acetone	Acetone	Acetone		Ketone bodies	Ketone bodies
+alanine	23460	Alanine	Ala	Ala	Alanine	Alanine		Amino acids	Amino acids
+albumin	23479	Albumin	Albumin	Albumin	Albumin	Albumin		Fluid balance	Fluid balance
+apolipoprotein a1	23440	Apolipoprotein A1	ApoA1	ApoA1	ApoA1	Apolipoprotein A1		Apolipoproteins	Apolipoproteins
+apolipoprotein b	23439	Apolipoprotein B	ApoB	ApoB	ApoB	Apolipoprotein B		Apolipoproteins	Apolipoproteins
+apolipoprotein b to apolipoprotein a1	23441	Apolipoprotein B to Apolipoprotein A1 ratio	ApoB/ApoA1	ApoB_by_ApoA1	ApoB/ApoA1	Ratio of apolipoprotein B to apolipoprotein A1		Apolipoproteins	Apolipoproteins
+average diameter for hdl particles	23433	Average Diameter for HDL Particles	HDL size	HDL_size	HDL particle size	Average diameter for HDL particles		Lipoprotein particle sizes	Lipoprotein particle sizes
+average diameter for ldl particles	23432	Average Diameter for LDL Particles	LDL size	LDL_size	LDL particle size	Average diameter for LDL particles		Lipoprotein particle sizes	Lipoprotein particle sizes
+average diameter for vldl particles	23431	Average Diameter for VLDL Particles	VLDL size	VLDL_size	VLDL particle size	Average diameter for VLDL particles		Lipoprotein particle sizes	Lipoprotein particle sizes
+cholesterol in chylomicrons and extremely large vldl	23484	Cholesterol in Chylomicrons and Extremely Large VLDL	XXL-VLDL-C	XXL_VLDL_C	XXL-VLDL-C	Cholesterol in chylomicrons and extremely large VLDL		Lipoprotein subclasses	Chylomicrons and extremely large VLDL
+cholesterol in idl	23526	Cholesterol in IDL	IDL-C	IDL_C	IDL-C	Cholesterol in IDL		Lipoprotein subclasses	IDL
+cholesterol in large hdl	23561	Cholesterol in Large HDL	L-HDL-C	L_HDL_C	L-HDL-C	Cholesterol in large HDL		Lipoprotein subclasses	Large HDL
+cholesterol in large ldl	23533	Cholesterol in Large LDL	L-LDL-C	L_LDL_C	L-LDL-C	Cholesterol in large LDL		Lipoprotein subclasses	Large LDL
+cholesterol in large vldl	23498	Cholesterol in Large VLDL	L-VLDL-C	L_VLDL_C	L-VLDL-C	Cholesterol in large VLDL		Lipoprotein subclasses	Large VLDL
+cholesterol in medium hdl	23568	Cholesterol in Medium HDL	M-HDL-C	M_HDL_C	M-HDL-C	Cholesterol in medium HDL		Lipoprotein subclasses	Medium HDL
+cholesterol in medium ldl	23540	Cholesterol in Medium LDL	M-LDL-C	M_LDL_C	M-LDL-C	Cholesterol in medium LDL		Lipoprotein subclasses	Medium LDL
+cholesterol in medium vldl	23505	Cholesterol in Medium VLDL	M-VLDL-C	M_VLDL_C	M-VLDL-C	Cholesterol in medium VLDL		Lipoprotein subclasses	Medium VLDL
+cholesterol in small hdl	23575	Cholesterol in Small HDL	S-HDL-C	S_HDL_C	S-HDL-C	Cholesterol in small HDL		Lipoprotein subclasses	Small HDL
+cholesterol in small ldl	23547	Cholesterol in Small LDL	S-LDL-C	S_LDL_C	S-LDL-C	Cholesterol in small LDL		Lipoprotein subclasses	Small LDL
+cholesterol in small vldl	23512	Cholesterol in Small VLDL	S-VLDL-C	S_VLDL_C	S-VLDL-C	Cholesterol in small VLDL		Lipoprotein subclasses	Small VLDL
+cholesterol in very large hdl	23554	Cholesterol in Very Large HDL	XL-HDL-C	XL_HDL_C	XL-HDL-C	Cholesterol in very large HDL		Lipoprotein subclasses	Very large HDL
+cholesterol in very large vldl	23491	Cholesterol in Very Large VLDL	XL-VLDL-C	XL_VLDL_C	XL-VLDL-C	Cholesterol in very large VLDL		Lipoprotein subclasses	Very large VLDL
+cholesterol in very small vldl	23519	Cholesterol in Very Small VLDL	XS-VLDL-C	XS_VLDL_C	XS-VLDL-C	Cholesterol in very small VLDL		Lipoprotein subclasses	Very small VLDL
+cholesterol to total lipids in chylomicrons and extremely large vldl	23580	Cholesterol to Total Lipids in Chylomicrons and Extremely Large VLDL percentage	XXL-VLDL-C %	XXL_VLDL_C_pct	XXL-VLDL-C %	Cholesterol to total lipids ratio in chylomicrons and extremely large VLDL		Relative lipoprotein lipid concentrations	Chylomicrons and extremely large VLDL ratios
+cholesterol to total lipids in idl	23610	Cholesterol to Total Lipids in IDL percentage	IDL-C %	IDL_C_pct	IDL-C %	Cholesterol to total lipids ratio in IDL		Relative lipoprotein lipid concentrations	IDL ratios
+cholesterol to total lipids in large hdl	23635	Cholesterol to Total Lipids in Large HDL percentage	L-HDL-C %	L_HDL_C_pct	L-HDL-C %	Cholesterol to total lipids ratio in large HDL		Relative lipoprotein lipid concentrations	Large HDL ratios
+cholesterol to total lipids in large ldl	23615	Cholesterol to Total Lipids in Large LDL percentage	L-LDL-C %	L_LDL_C_pct	L-LDL-C %	Cholesterol to total lipids ratio in large LDL		Relative lipoprotein lipid concentrations	Large LDL ratios
+cholesterol to total lipids in large vldl	23590	Cholesterol to Total Lipids in Large VLDL percentage	L-VLDL-C %	L_VLDL_C_pct	L-VLDL-C %	Cholesterol to total lipids ratio in large VLDL		Relative lipoprotein lipid concentrations	Large VLDL ratios
+cholesterol to total lipids in medium hdl	23640	Cholesterol to Total Lipids in Medium HDL percentage	M-HDL-C %	M_HDL_C_pct	M-HDL-C %	Cholesterol to total lipids ratio in medium HDL		Relative lipoprotein lipid concentrations	Medium HDL ratios
+cholesterol to total lipids in medium ldl	23620	Cholesterol to Total Lipids in Medium LDL percentage	M-LDL-C %	M_LDL_C_pct	M-LDL-C %	Cholesterol to total lipids ratio in medium LDL		Relative lipoprotein lipid concentrations	Medium LDL ratios
+cholesterol to total lipids in medium vldl	23595	Cholesterol to Total Lipids in Medium VLDL percentage	M-VLDL-C %	M_VLDL_C_pct	M-VLDL-C %	Cholesterol to total lipids ratio in medium VLDL		Relative lipoprotein lipid concentrations	Medium VLDL ratios
+cholesterol to total lipids in small hdl	23645	Cholesterol to Total Lipids in Small HDL percentage	S-HDL-C %	S_HDL_C_pct	S-HDL-C %	Cholesterol to total lipids ratio in small HDL		Relative lipoprotein lipid concentrations	Small HDL ratios
+cholesterol to total lipids in small ldl	23625	Cholesterol to Total Lipids in Small LDL percentage	S-LDL-C %	S_LDL_C_pct	S-LDL-C %	Cholesterol to total lipids ratio in small LDL		Relative lipoprotein lipid concentrations	Small LDL ratios
+cholesterol to total lipids in small vldl	23600	Cholesterol to Total Lipids in Small VLDL percentage	S-VLDL-C %	S_VLDL_C_pct	S-VLDL-C %	Cholesterol to total lipids ratio in small VLDL		Relative lipoprotein lipid concentrations	Small VLDL ratios
+cholesterol to total lipids in very large hdl	23630	Cholesterol to Total Lipids in Very Large HDL percentage	XL-HDL-C %	XL_HDL_C_pct	XL-HDL-C %	Cholesterol to total lipids ratio in very large HDL		Relative lipoprotein lipid concentrations	Very large HDL ratios
+cholesterol to total lipids in very large vldl	23585	Cholesterol to Total Lipids in Very Large VLDL percentage	XL-VLDL-C %	XL_VLDL_C_pct	XL-VLDL-C %	Cholesterol to total lipids ratio in very large VLDL		Relative lipoprotein lipid concentrations	Very large VLDL ratios
+cholesterol to total lipids in very small vldl	23605	Cholesterol to Total Lipids in Very Small VLDL percentage	XS-VLDL-C %	XS_VLDL_C_pct	XS-VLDL-C %	Cholesterol to total lipids ratio in very small VLDL		Relative lipoprotein lipid concentrations	Very small VLDL ratios
+cholesteryl esters in chylomicrons and extremely large vldl	23485	Cholesteryl Esters in Chylomicrons and Extremely Large VLDL	XXL-VLDL-CE	XXL_VLDL_CE	XXL-VLDL-CE	Cholesteryl esters in chylomicrons and extremely large VLDL		Lipoprotein subclasses	Chylomicrons and extremely large VLDL
+cholesteryl esters in hdl	23418	Cholesteryl Esters in HDL	HDL-CE	HDL_CE	HDL-CE	Cholesteryl esters in HDL		Cholesteryl esters	Cholesteryl esters
+cholesteryl esters in idl	23527	Cholesteryl Esters in IDL	IDL-CE	IDL_CE	IDL-CE	Cholesteryl esters in IDL		Lipoprotein subclasses	IDL
+cholesteryl esters in large hdl	23562	Cholesteryl Esters in Large HDL	L-HDL-CE	L_HDL_CE	L-HDL-CE	Cholesteryl esters in large HDL		Lipoprotein subclasses	Large HDL
+cholesteryl esters in large ldl	23534	Cholesteryl Esters in Large LDL	L-LDL-CE	L_LDL_CE	L-LDL-CE	Cholesteryl esters in large LDL		Lipoprotein subclasses	Large LDL
+cholesteryl esters in large vldl	23499	Cholesteryl Esters in Large VLDL	L-VLDL-CE	L_VLDL_CE	L-VLDL-CE	Cholesteryl esters in large VLDL		Lipoprotein subclasses	Large VLDL
+cholesteryl esters in ldl	23417	Cholesteryl Esters in LDL	LDL-CE	LDL_CE	LDL-CE	Cholesteryl esters in LDL		Cholesteryl esters	Cholesteryl esters
+cholesteryl esters in medium hdl	23569	Cholesteryl Esters in Medium HDL	M-HDL-CE	M_HDL_CE	M-HDL-CE	Cholesteryl esters in medium HDL		Lipoprotein subclasses	Medium HDL
+cholesteryl esters in medium ldl	23541	Cholesteryl Esters in Medium LDL	M-LDL-CE	M_LDL_CE	M-LDL-CE	Cholesteryl esters in medium LDL		Lipoprotein subclasses	Medium LDL
+cholesteryl esters in medium vldl	23506	Cholesteryl Esters in Medium VLDL	M-VLDL-CE	M_VLDL_CE	M-VLDL-CE	Cholesteryl esters in medium VLDL		Lipoprotein subclasses	Medium VLDL
+cholesteryl esters in small hdl	23576	Cholesteryl Esters in Small HDL	S-HDL-CE	S_HDL_CE	S-HDL-CE	Cholesteryl esters in small HDL		Lipoprotein subclasses	Small HDL
+cholesteryl esters in small ldl	23548	Cholesteryl Esters in Small LDL	S-LDL-CE	S_LDL_CE	S-LDL-CE	Cholesteryl esters in small LDL		Lipoprotein subclasses	Small LDL
+cholesteryl esters in small vldl	23513	Cholesteryl Esters in Small VLDL	S-VLDL-CE	S_VLDL_CE	S-VLDL-CE	Cholesteryl esters in small VLDL		Lipoprotein subclasses	Small VLDL
+cholesteryl esters in very large hdl	23555	Cholesteryl Esters in Very Large HDL	XL-HDL-CE	XL_HDL_CE	XL-HDL-CE	Cholesteryl esters in very large HDL		Lipoprotein subclasses	Very large HDL
+cholesteryl esters in very large vldl	23492	Cholesteryl Esters in Very Large VLDL	XL-VLDL-CE	XL_VLDL_CE	XL-VLDL-CE	Cholesteryl esters in very large VLDL		Lipoprotein subclasses	Very large VLDL
+cholesteryl esters in very small vldl	23520	Cholesteryl Esters in Very Small VLDL	XS-VLDL-CE	XS_VLDL_CE	XS-VLDL-CE	Cholesteryl esters in very small VLDL		Lipoprotein subclasses	Very small VLDL
+cholesteryl esters in vldl	23416	Cholesteryl Esters in VLDL	VLDL-CE	VLDL_CE	VLDL-CE	Cholesteryl esters in VLDL		Cholesteryl esters	Cholesteryl esters
+cholesteryl esters to total lipids in chylomicrons and extremely large vldl	23581	Cholesteryl Esters to Total Lipids in Chylomicrons and Extremely Large VLDL percentage	XXL-VLDL-CE %	XXL_VLDL_CE_pct	XXL-VLDL-CE %	Cholesteryl esters to total lipids ratio in chylomicrons and extremely large VLDL		Relative lipoprotein lipid concentrations	Chylomicrons and extremely large VLDL ratios
+cholesteryl esters to total lipids in idl	23611	Cholesteryl Esters to Total Lipids in IDL percentage	IDL-CE %	IDL_CE_pct	IDL-CE %	Cholesteryl esters to total lipids ratio in IDL		Relative lipoprotein lipid concentrations	IDL ratios
+cholesteryl esters to total lipids in large hdl	23636	Cholesteryl Esters to Total Lipids in Large HDL percentage	L-HDL-CE %	L_HDL_CE_pct	L-HDL-CE %	Cholesteryl esters to total lipids ratio in large HDL		Relative lipoprotein lipid concentrations	Large HDL ratios
+cholesteryl esters to total lipids in large ldl	23616	Cholesteryl Esters to Total Lipids in Large LDL percentage	L-LDL-CE %	L_LDL_CE_pct	L-LDL-CE %	Cholesteryl esters to total lipids ratio in large LDL		Relative lipoprotein lipid concentrations	Large LDL ratios
+cholesteryl esters to total lipids in large vldl	23591	Cholesteryl Esters to Total Lipids in Large VLDL percentage	L-VLDL-CE %	L_VLDL_CE_pct	L-VLDL-CE %	Cholesteryl esters to total lipids ratio in large VLDL		Relative lipoprotein lipid concentrations	Large VLDL ratios
+cholesteryl esters to total lipids in medium hdl	23641	Cholesteryl Esters to Total Lipids in Medium HDL percentage	M-HDL-CE %	M_HDL_CE_pct	M-HDL-CE %	Cholesteryl esters to total lipids ratio in medium HDL		Relative lipoprotein lipid concentrations	Medium HDL ratios
+cholesteryl esters to total lipids in medium ldl	23621	Cholesteryl Esters to Total Lipids in Medium LDL percentage	M-LDL-CE %	M_LDL_CE_pct	M-LDL-CE %	Cholesteryl esters to total lipids ratio in medium LDL		Relative lipoprotein lipid concentrations	Medium LDL ratios
+cholesteryl esters to total lipids in medium vldl	23596	Cholesteryl Esters to Total Lipids in Medium VLDL percentage	M-VLDL-CE %	M_VLDL_CE_pct	M-VLDL-CE %	Cholesteryl esters to total lipids ratio in medium VLDL		Relative lipoprotein lipid concentrations	Medium VLDL ratios
+cholesteryl esters to total lipids in small hdl	23646	Cholesteryl Esters to Total Lipids in Small HDL percentage	S-HDL-CE %	S_HDL_CE_pct	S-HDL-CE %	Cholesteryl esters to total lipids ratio in small HDL		Relative lipoprotein lipid concentrations	Small HDL ratios
+cholesteryl esters to total lipids in small ldl	23626	Cholesteryl Esters to Total Lipids in Small LDL percentage	S-LDL-CE %	S_LDL_CE_pct	S-LDL-CE %	Cholesteryl esters to total lipids ratio in small LDL		Relative lipoprotein lipid concentrations	Small LDL ratios
+cholesteryl esters to total lipids in small vldl	23601	Cholesteryl Esters to Total Lipids in Small VLDL percentage	S-VLDL-CE %	S_VLDL_CE_pct	S-VLDL-CE %	Cholesteryl esters to total lipids ratio in small VLDL		Relative lipoprotein lipid concentrations	Small VLDL ratios
+cholesteryl esters to total lipids in very large hdl	23631	Cholesteryl Esters to Total Lipids in Very Large HDL percentage	XL-HDL-CE %	XL_HDL_CE_pct	XL-HDL-CE %	Cholesteryl esters to total lipids ratio in very large HDL		Relative lipoprotein lipid concentrations	Very large HDL ratios
+cholesteryl esters to total lipids in very large vldl	23586	Cholesteryl Esters to Total Lipids in Very Large VLDL percentage	XL-VLDL-CE %	XL_VLDL_CE_pct	XL-VLDL-CE %	Cholesteryl esters to total lipids ratio in very large VLDL		Relative lipoprotein lipid concentrations	Very large VLDL ratios
+cholesteryl esters to total lipids in very small vldl	23606	Cholesteryl Esters to Total Lipids in Very Small VLDL percentage	XS-VLDL-CE %	XS_VLDL_CE_pct	XS-VLDL-CE %	Cholesteryl esters to total lipids ratio in very small VLDL		Relative lipoprotein lipid concentrations	Very small VLDL ratios
+citrate	23473	Citrate	Citrate	Citrate	Citrate	Citrate		Glycolysis related metabolites	Glycolysis related metabolites
+clinical ldl cholesterol	23404	Clinical LDL Cholesterol	Clinical LDL-C	Clinical_LDL_C	Clinical LDL-C	Clinical LDL cholesterol		Cholesterol	Cholesterol
+concentration of chylomicrons and extremely large vldl particles	23481	Concentration of Chylomicrons and Extremely Large VLDL Particles	XXL-VLDL-P	XXL_VLDL_P	XXL-VLDL-P	Concentration of chylomicrons and extremely large VLDL particles		Lipoprotein subclasses	Chylomicrons and extremely large VLDL
+concentration of hdl particles	23430	Concentration of HDL Particles	HDL-P	HDL_P	HDL-P	Concentration of HDL particles		Lipoprotein particle concentrations	Lipoprotein particle concentrations
+concentration of idl particles	23523	Concentration of IDL Particles	IDL-P	IDL_P	IDL-P	Concentration of IDL particles		Lipoprotein subclasses	IDL
+concentration of large hdl particles	23558	Concentration of Large HDL Particles	L-HDL-P	L_HDL_P	L-HDL-P	Concentration of large HDL particles		Lipoprotein subclasses	Large HDL
+concentration of large ldl particles	23530	Concentration of Large LDL Particles	L-LDL-P	L_LDL_P	L-LDL-P	Concentration of large LDL particles		Lipoprotein subclasses	Large LDL
+concentration of large vldl particles	23495	Concentration of Large VLDL Particles	L-VLDL-P	L_VLDL_P	L-VLDL-P	Concentration of large VLDL particles		Lipoprotein subclasses	Large VLDL
+concentration of ldl particles	23429	Concentration of LDL Particles	LDL-P	LDL_P	LDL-P	Concentration of LDL particles		Lipoprotein particle concentrations	Lipoprotein particle concentrations
+concentration of medium hdl particles	23565	Concentration of Medium HDL Particles	M-HDL-P	M_HDL_P	M-HDL-P	Concentration of medium HDL particles		Lipoprotein subclasses	Medium HDL
+concentration of medium ldl particles	23537	Concentration of Medium LDL Particles	M-LDL-P	M_LDL_P	M-LDL-P	Concentration of medium LDL particles		Lipoprotein subclasses	Medium LDL
+concentration of medium vldl particles	23502	Concentration of Medium VLDL Particles	M-VLDL-P	M_VLDL_P	M-VLDL-P	Concentration of medium VLDL particles		Lipoprotein subclasses	Medium VLDL
+concentration of small hdl particles	23572	Concentration of Small HDL Particles	S-HDL-P	S_HDL_P	S-HDL-P	Concentration of small HDL particles		Lipoprotein subclasses	Small HDL
+concentration of small ldl particles	23544	Concentration of Small LDL Particles	S-LDL-P	S_LDL_P	S-LDL-P	Concentration of small LDL particles		Lipoprotein subclasses	Small LDL
+concentration of small vldl particles	23509	Concentration of Small VLDL Particles	S-VLDL-P	S_VLDL_P	S-VLDL-P	Concentration of small VLDL particles		Lipoprotein subclasses	Small VLDL
+concentration of very large hdl particles	23551	Concentration of Very Large HDL Particles	XL-HDL-P	XL_HDL_P	XL-HDL-P	Concentration of very large HDL particles		Lipoprotein subclasses	Very large HDL
+concentration of very large vldl particles	23488	Concentration of Very Large VLDL Particles	XL-VLDL-P	XL_VLDL_P	XL-VLDL-P	Concentration of very large VLDL particles		Lipoprotein subclasses	Very large VLDL
+concentration of very small vldl particles	23516	Concentration of Very Small VLDL Particles	XS-VLDL-P	XS_VLDL_P	XS-VLDL-P	Concentration of very small VLDL particles		Lipoprotein subclasses	Very small VLDL
+concentration of vldl particles	23428	Concentration of VLDL Particles	VLDL-P	VLDL_P	VLDL-P	Concentration of VLDL particles		Lipoprotein particle concentrations	Lipoprotein particle concentrations
+creatinine	23478	Creatinine	Creatinine	Creatinine	Creatinine	Creatinine		Fluid balance	Fluid balance
+degree of unsaturation	23443	Degree of Unsaturation	Unsaturation	Unsaturation	Unsaturation	Degree of unsaturation		Fatty acids	Fatty acids
+docosahexaenoic acid	23450	Docosahexaenoic Acid	DHA	DHA	DHA	Docosahexaenoic acid		Fatty acids	Fatty acids
+docosahexaenoic acid to total fatty acids	23457	Docosahexaenoic Acid to Total Fatty Acids percentage	DHA %	DHA_pct	DHA %	Ratio of docosahexaenoic acid to total fatty acids		Fatty acids	Fatty acid ratios
+free cholesterol in chylomicrons and extremely large vldl	23486	Free Cholesterol in Chylomicrons and Extremely Large VLDL	XXL-VLDL-FC	XXL_VLDL_FC	XXL-VLDL-FC	Free cholesterol in chylomicrons and extremely large VLDL		Lipoprotein subclasses	Chylomicrons and extremely large VLDL
+free cholesterol in hdl	23422	Free Cholesterol in HDL	HDL-FC	HDL_FC	HDL-FC	Free cholesterol in HDL		Free cholesterol	Free cholesterol
+free cholesterol in idl	23528	Free Cholesterol in IDL	IDL-FC	IDL_FC	IDL-FC	Free cholesterol in IDL		Lipoprotein subclasses	IDL
+free cholesterol in large hdl	23563	Free Cholesterol in Large HDL	L-HDL-FC	L_HDL_FC	L-HDL-FC	Free cholesterol in large HDL		Lipoprotein subclasses	Large HDL
+free cholesterol in large ldl	23535	Free Cholesterol in Large LDL	L-LDL-FC	L_LDL_FC	L-LDL-FC	Free cholesterol in large LDL		Lipoprotein subclasses	Large LDL
+free cholesterol in large vldl	23500	Free Cholesterol in Large VLDL	L-VLDL-FC	L_VLDL_FC	L-VLDL-FC	Free cholesterol in large VLDL		Lipoprotein subclasses	Large VLDL
+free cholesterol in ldl	23421	Free Cholesterol in LDL	LDL-FC	LDL_FC	LDL-FC	Free cholesterol in LDL		Free cholesterol	Free cholesterol
+free cholesterol in medium hdl	23570	Free Cholesterol in Medium HDL	M-HDL-FC	M_HDL_FC	M-HDL-FC	Free cholesterol in medium HDL		Lipoprotein subclasses	Medium HDL
+free cholesterol in medium ldl	23542	Free Cholesterol in Medium LDL	M-LDL-FC	M_LDL_FC	M-LDL-FC	Free cholesterol in medium LDL		Lipoprotein subclasses	Medium LDL
+free cholesterol in medium vldl	23507	Free Cholesterol in Medium VLDL	M-VLDL-FC	M_VLDL_FC	M-VLDL-FC	Free cholesterol in medium VLDL		Lipoprotein subclasses	Medium VLDL
+free cholesterol in small hdl	23577	Free Cholesterol in Small HDL	S-HDL-FC	S_HDL_FC	S-HDL-FC	Free cholesterol in small HDL		Lipoprotein subclasses	Small HDL
+free cholesterol in small ldl	23549	Free Cholesterol in Small LDL	S-LDL-FC	S_LDL_FC	S-LDL-FC	Free cholesterol in small LDL		Lipoprotein subclasses	Small LDL
+free cholesterol in small vldl	23514	Free Cholesterol in Small VLDL	S-VLDL-FC	S_VLDL_FC	S-VLDL-FC	Free cholesterol in small VLDL		Lipoprotein subclasses	Small VLDL
+free cholesterol in very large hdl	23556	Free Cholesterol in Very Large HDL	XL-HDL-FC	XL_HDL_FC	XL-HDL-FC	Free cholesterol in very large HDL		Lipoprotein subclasses	Very large HDL
+free cholesterol in very large vldl	23493	Free Cholesterol in Very Large VLDL	XL-VLDL-FC	XL_VLDL_FC	XL-VLDL-FC	Free cholesterol in very large VLDL		Lipoprotein subclasses	Very large VLDL
+free cholesterol in very small vldl	23521	Free Cholesterol in Very Small VLDL	XS-VLDL-FC	XS_VLDL_FC	XS-VLDL-FC	Free cholesterol in very small VLDL		Lipoprotein subclasses	Very small VLDL
+free cholesterol in vldl	23420	Free Cholesterol in VLDL	VLDL-FC	VLDL_FC	VLDL-FC	Free cholesterol in VLDL		Free cholesterol	Free cholesterol
+free cholesterol to total lipids in chylomicrons and extremely large vldl	23582	Free Cholesterol to Total Lipids in Chylomicrons and Extremely Large VLDL percentage	XXL-VLDL-FC %	XXL_VLDL_FC_pct	XXL-VLDL-FC %	Free cholesterol to total lipids ratio in chylomicrons and extremely large VLDL		Relative lipoprotein lipid concentrations	Chylomicrons and extremely large VLDL ratios
+free cholesterol to total lipids in idl	23612	Free Cholesterol to Total Lipids in IDL percentage	IDL-FC %	IDL_FC_pct	IDL-FC %	Free cholesterol to total lipids ratio in IDL		Relative lipoprotein lipid concentrations	IDL ratios
+free cholesterol to total lipids in large hdl	23637	Free Cholesterol to Total Lipids in Large HDL percentage	L-HDL-FC %	L_HDL_FC_pct	L-HDL-FC %	Free cholesterol to total lipids ratio in large HDL		Relative lipoprotein lipid concentrations	Large HDL ratios
+free cholesterol to total lipids in large ldl	23617	Free Cholesterol to Total Lipids in Large LDL percentage	L-LDL-FC %	L_LDL_FC_pct	L-LDL-FC %	Free cholesterol to total lipids ratio in large LDL		Relative lipoprotein lipid concentrations	Large LDL ratios
+free cholesterol to total lipids in large vldl	23592	Free Cholesterol to Total Lipids in Large VLDL percentage	L-VLDL-FC %	L_VLDL_FC_pct	L-VLDL-FC %	Free cholesterol to total lipids ratio in large VLDL		Relative lipoprotein lipid concentrations	Large VLDL ratios
+free cholesterol to total lipids in medium hdl	23642	Free Cholesterol to Total Lipids in Medium HDL percentage	M-HDL-FC %	M_HDL_FC_pct	M-HDL-FC %	Free cholesterol to total lipids ratio in medium HDL		Relative lipoprotein lipid concentrations	Medium HDL ratios
+free cholesterol to total lipids in medium ldl	23622	Free Cholesterol to Total Lipids in Medium LDL percentage	M-LDL-FC %	M_LDL_FC_pct	M-LDL-FC %	Free cholesterol to total lipids ratio in medium LDL		Relative lipoprotein lipid concentrations	Medium LDL ratios
+free cholesterol to total lipids in medium vldl	23597	Free Cholesterol to Total Lipids in Medium VLDL percentage	M-VLDL-FC %	M_VLDL_FC_pct	M-VLDL-FC %	Free cholesterol to total lipids ratio in medium VLDL		Relative lipoprotein lipid concentrations	Medium VLDL ratios
+free cholesterol to total lipids in small hdl	23647	Free Cholesterol to Total Lipids in Small HDL percentage	S-HDL-FC %	S_HDL_FC_pct	S-HDL-FC %	Free cholesterol to total lipids ratio in small HDL		Relative lipoprotein lipid concentrations	Small HDL ratios
+free cholesterol to total lipids in small ldl	23627	Free Cholesterol to Total Lipids in Small LDL percentage	S-LDL-FC %	S_LDL_FC_pct	S-LDL-FC %	Free cholesterol to total lipids ratio in small LDL		Relative lipoprotein lipid concentrations	Small LDL ratios
+free cholesterol to total lipids in small vldl	23602	Free Cholesterol to Total Lipids in Small VLDL percentage	S-VLDL-FC %	S_VLDL_FC_pct	S-VLDL-FC %	Free cholesterol to total lipids ratio in small VLDL		Relative lipoprotein lipid concentrations	Small VLDL ratios
+free cholesterol to total lipids in very large hdl	23632	Free Cholesterol to Total Lipids in Very Large HDL percentage	XL-HDL-FC %	XL_HDL_FC_pct	XL-HDL-FC %	Free cholesterol to total lipids ratio in very large HDL		Relative lipoprotein lipid concentrations	Very large HDL ratios
+free cholesterol to total lipids in very large vldl	23587	Free Cholesterol to Total Lipids in Very Large VLDL percentage	XL-VLDL-FC %	XL_VLDL_FC_pct	XL-VLDL-FC %	Free cholesterol to total lipids ratio in very large VLDL		Relative lipoprotein lipid concentrations	Very large VLDL ratios
+free cholesterol to total lipids in very small vldl	23607	Free Cholesterol to Total Lipids in Very Small VLDL percentage	XS-VLDL-FC %	XS_VLDL_FC_pct	XS-VLDL-FC %	Free cholesterol to total lipids ratio in very small VLDL		Relative lipoprotein lipid concentrations	Very small VLDL ratios
+glucose	23470	Glucose	Glucose	Glucose	Glucose	Glucose		Glycolysis related metabolites	Glycolysis related metabolites
+glutamine	23461	Glutamine	Gln	Gln	Glutamine	Glutamine		Amino acids	Amino acids
+glycine	23462	Glycine	Gly	Gly	Glycine	Glycine		Amino acids	Amino acids
+glycoprotein acetyls	23480	Glycoprotein Acetyls	GlycA	GlycA	Glycoprotein acetyls	Glycoprotein acetyls		Inflammation	Inflammation
+hdl cholesterol	23406	HDL Cholesterol	HDL-C	HDL_C	HDL-C	HDL cholesterol		Cholesterol	Cholesterol
+histidine	23463	Histidine	His	His	Histidine	Histidine		Amino acids	Amino acids
+isoleucine	23465	Isoleucine	Ile	Ile	Isoleucine	Isoleucine		Amino acids	Branched-chain amino acids
+lactate	23471	Lactate	Lactate	Lactate	Lactate	Lactate		Glycolysis related metabolites	Glycolysis related metabolites
+ldl cholesterol	23405	LDL Cholesterol	LDL-C	LDL_C	LDL-C	LDL cholesterol		Cholesterol	Cholesterol
+leucine	23466	Leucine	Leu	Leu	Leucine	Leucine		Amino acids	Branched-chain amino acids
+linoleic acid	23449	Linoleic Acid	LA	LA	LA	Linoleic acid		Fatty acids	Fatty acids
+linoleic acid to total fatty acids	23456	Linoleic Acid to Total Fatty Acids percentage	LA %	LA_pct	LA %	Ratio of linoleic acid to total fatty acids		Fatty acids	Fatty acid ratios
+monounsaturated fatty acids	23447	Monounsaturated Fatty Acids	MUFA	MUFA	MUFA	Monounsaturated fatty acids		Fatty acids	Fatty acids
+monounsaturated fatty acids to total fatty acids	23454	Monounsaturated Fatty Acids to Total Fatty Acids percentage	MUFA %	MUFA_pct	MUFA %	Ratio of monounsaturated fatty acids to total fatty acids		Fatty acids	Fatty acid ratios
+omega-3 fatty acids	23444	Omega-3 Fatty Acids	Omega-3	Omega_3	Omega-3	Omega-3 fatty acids		Fatty acids	Fatty acids
+omega-3 fatty acids to total fatty acids	23451	Omega-3 Fatty Acids to Total Fatty Acids percentage	Omega-3 %	Omega_3_pct	Omega-3 %	Ratio of omega-3 fatty acids to total fatty acids		Fatty acids	Fatty acid ratios
+omega-6 fatty acids	23445	Omega-6 Fatty Acids	Omega-6	Omega_6	Omega-6	Omega-6 fatty acids		Fatty acids	Fatty acids
+omega-6 fatty acids to omega-3 fatty acids	23459	Omega-6 Fatty Acids to Omega-3 Fatty Acids ratio	Omega-6/Omega-3	Omega_6_by_Omega_3	Omega-6/Omega-3	Ratio of omega-6 fatty acids to omega-3 fatty acids		Fatty acids	Fatty acid ratios
+omega-6 fatty acids to total fatty acids	23452	Omega-6 Fatty Acids to Total Fatty Acids percentage	Omega-6 %	Omega_6_pct	Omega-6 %	Ratio of omega-6 fatty acids to total fatty acids		Fatty acids	Fatty acid ratios
+phenylalanine	23468	Phenylalanine	Phe	Phe	Phenylalanine	Phenylalanine		Amino acids	Aromatic amino acids
+phosphatidylcholines	23437	Phosphatidylcholines	Phosphatidylc	Phosphatidylc	Phosphatidylcholines	Phosphatidylcholines		Other lipids	Other lipids
+phosphoglycerides	23434	Phosphoglycerides	Phosphoglyc	Phosphoglyc	Phosphoglycerides	Phosphoglycerides		Other lipids	Other lipids
+phospholipids in chylomicrons and extremely large vldl	23483	Phospholipids in Chylomicrons and Extremely Large VLDL	XXL-VLDL-PL	XXL_VLDL_PL	XXL-VLDL-PL	Phospholipids in chylomicrons and extremely large VLDL		Lipoprotein subclasses	Chylomicrons and extremely large VLDL
+phospholipids in hdl	23414	Phospholipids in HDL	HDL-PL	HDL_PL	HDL-PL	Phospholipids in HDL		Phospholipids	Phospholipids
+phospholipids in idl	23525	Phospholipids in IDL	IDL-PL	IDL_PL	IDL-PL	Phospholipids in IDL		Lipoprotein subclasses	IDL
+phospholipids in large hdl	23560	Phospholipids in Large HDL	L-HDL-PL	L_HDL_PL	L-HDL-PL	Phospholipids in large HDL		Lipoprotein subclasses	Large HDL
+phospholipids in large ldl	23532	Phospholipids in Large LDL	L-LDL-PL	L_LDL_PL	L-LDL-PL	Phospholipids in large LDL		Lipoprotein subclasses	Large LDL
+phospholipids in large vldl	23497	Phospholipids in Large VLDL	L-VLDL-PL	L_VLDL_PL	L-VLDL-PL	Phospholipids in large VLDL		Lipoprotein subclasses	Large VLDL
+phospholipids in ldl	23413	Phospholipids in LDL	LDL-PL	LDL_PL	LDL-PL	Phospholipids in LDL		Phospholipids	Phospholipids
+phospholipids in medium hdl	23567	Phospholipids in Medium HDL	M-HDL-PL	M_HDL_PL	M-HDL-PL	Phospholipids in medium HDL		Lipoprotein subclasses	Medium HDL
+phospholipids in medium ldl	23539	Phospholipids in Medium LDL	M-LDL-PL	M_LDL_PL	M-LDL-PL	Phospholipids in medium LDL		Lipoprotein subclasses	Medium LDL
+phospholipids in medium vldl	23504	Phospholipids in Medium VLDL	M-VLDL-PL	M_VLDL_PL	M-VLDL-PL	Phospholipids in medium VLDL		Lipoprotein subclasses	Medium VLDL
+phospholipids in small hdl	23574	Phospholipids in Small HDL	S-HDL-PL	S_HDL_PL	S-HDL-PL	Phospholipids in small HDL		Lipoprotein subclasses	Small HDL
+phospholipids in small ldl	23546	Phospholipids in Small LDL	S-LDL-PL	S_LDL_PL	S-LDL-PL	Phospholipids in small LDL		Lipoprotein subclasses	Small LDL
+phospholipids in small vldl	23511	Phospholipids in Small VLDL	S-VLDL-PL	S_VLDL_PL	S-VLDL-PL	Phospholipids in small VLDL		Lipoprotein subclasses	Small VLDL
+phospholipids in very large hdl	23553	Phospholipids in Very Large HDL	XL-HDL-PL	XL_HDL_PL	XL-HDL-PL	Phospholipids in very large HDL		Lipoprotein subclasses	Very large HDL
+phospholipids in very large vldl	23490	Phospholipids in Very Large VLDL	XL-VLDL-PL	XL_VLDL_PL	XL-VLDL-PL	Phospholipids in very large VLDL		Lipoprotein subclasses	Very large VLDL
+phospholipids in very small vldl	23518	Phospholipids in Very Small VLDL	XS-VLDL-PL	XS_VLDL_PL	XS-VLDL-PL	Phospholipids in very small VLDL		Lipoprotein subclasses	Very small VLDL
+phospholipids in vldl	23412	Phospholipids in VLDL	VLDL-PL	VLDL_PL	VLDL-PL	Phospholipids in VLDL		Phospholipids	Phospholipids
+phospholipids to total lipids in chylomicrons and extremely large vldl	23579	Phospholipids to Total Lipids in Chylomicrons and Extremely Large VLDL percentage	XXL-VLDL-PL %	XXL_VLDL_PL_pct	XXL-VLDL-PL %	Phospholipids to total lipids ratio in chylomicrons and extremely large VLDL		Relative lipoprotein lipid concentrations	Chylomicrons and extremely large VLDL ratios
+phospholipids to total lipids in idl	23609	Phospholipids to Total Lipids in IDL percentage	IDL-PL %	IDL_PL_pct	IDL-PL %	Phospholipids to total lipids ratio in IDL		Relative lipoprotein lipid concentrations	IDL ratios
+phospholipids to total lipids in large hdl	23634	Phospholipids to Total Lipids in Large HDL percentage	L-HDL-PL %	L_HDL_PL_pct	L-HDL-PL %	Phospholipids to total lipids ratio in large HDL		Relative lipoprotein lipid concentrations	Large HDL ratios
+phospholipids to total lipids in large ldl	23614	Phospholipids to Total Lipids in Large LDL percentage	L-LDL-PL %	L_LDL_PL_pct	L-LDL-PL %	Phospholipids to total lipids ratio in large LDL		Relative lipoprotein lipid concentrations	Large LDL ratios
+phospholipids to total lipids in large vldl	23589	Phospholipids to Total Lipids in Large VLDL percentage	L-VLDL-PL %	L_VLDL_PL_pct	L-VLDL-PL %	Phospholipids to total lipids ratio in large VLDL		Relative lipoprotein lipid concentrations	Large VLDL ratios
+phospholipids to total lipids in medium hdl	23639	Phospholipids to Total Lipids in Medium HDL percentage	M-HDL-PL %	M_HDL_PL_pct	M-HDL-PL %	Phospholipids to total lipids ratio in medium HDL		Relative lipoprotein lipid concentrations	Medium HDL ratios
+phospholipids to total lipids in medium ldl	23619	Phospholipids to Total Lipids in Medium LDL percentage	M-LDL-PL %	M_LDL_PL_pct	M-LDL-PL %	Phospholipids to total lipids ratio in medium LDL		Relative lipoprotein lipid concentrations	Medium LDL ratios
+phospholipids to total lipids in medium vldl	23594	Phospholipids to Total Lipids in Medium VLDL percentage	M-VLDL-PL %	M_VLDL_PL_pct	M-VLDL-PL %	Phospholipids to total lipids ratio in medium VLDL		Relative lipoprotein lipid concentrations	Medium VLDL ratios
+phospholipids to total lipids in small hdl	23644	Phospholipids to Total Lipids in Small HDL percentage	S-HDL-PL %	S_HDL_PL_pct	S-HDL-PL %	Phospholipids to total lipids ratio in small HDL		Relative lipoprotein lipid concentrations	Small HDL ratios
+phospholipids to total lipids in small ldl	23624	Phospholipids to Total Lipids in Small LDL percentage	S-LDL-PL %	S_LDL_PL_pct	S-LDL-PL %	Phospholipids to total lipids ratio in small LDL		Relative lipoprotein lipid concentrations	Small LDL ratios
+phospholipids to total lipids in small vldl	23599	Phospholipids to Total Lipids in Small VLDL percentage	S-VLDL-PL %	S_VLDL_PL_pct	S-VLDL-PL %	Phospholipids to total lipids ratio in small VLDL		Relative lipoprotein lipid concentrations	Small VLDL ratios
+phospholipids to total lipids in very large hdl	23629	Phospholipids to Total Lipids in Very Large HDL percentage	XL-HDL-PL %	XL_HDL_PL_pct	XL-HDL-PL %	Phospholipids to total lipids ratio in very large HDL		Relative lipoprotein lipid concentrations	Very large HDL ratios
+phospholipids to total lipids in very large vldl	23584	Phospholipids to Total Lipids in Very Large VLDL percentage	XL-VLDL-PL %	XL_VLDL_PL_pct	XL-VLDL-PL %	Phospholipids to total lipids ratio in very large VLDL		Relative lipoprotein lipid concentrations	Very large VLDL ratios
+phospholipids to total lipids in very small vldl	23604	Phospholipids to Total Lipids in Very Small VLDL percentage	XS-VLDL-PL %	XS_VLDL_PL_pct	XS-VLDL-PL %	Phospholipids to total lipids ratio in very small VLDL		Relative lipoprotein lipid concentrations	Very small VLDL ratios
+polyunsaturated fatty acids	23446	Polyunsaturated Fatty Acids	PUFA	PUFA	PUFA	Polyunsaturated fatty acids		Fatty acids	Fatty acids
+polyunsaturated fatty acids to monounsaturated fatty acids	23458	Polyunsaturated Fatty Acids to Monounsaturated Fatty Acids ratio	PUFA/MUFA	PUFA_by_MUFA	PUFA/MUFA	Ratio of polyunsaturated fatty acids to monounsaturated fatty acids		Fatty acids	Fatty acid ratios
+polyunsaturated fatty acids to total fatty acids	23453	Polyunsaturated Fatty Acids to Total Fatty Acids percentage	PUFA %	PUFA_pct	PUFA %	Ratio of polyunsaturated fatty acids to total fatty acids		Fatty acids	Fatty acid ratios
+pyruvate	23472	Pyruvate	Pyruvate	Pyruvate	Pyruvate	Pyruvate		Glycolysis related metabolites	Glycolysis related metabolites
+remnant cholesterol (non-hdl, non-ldl -cholesterol)	23402	Remnant Cholesterol (Non-HDL, Non-LDL -Cholesterol)	Remnant-C	Remnant_C	Remnant-C	Remnant cholesterol (non-HDL, non-LDL -cholesterol)		Cholesterol	Cholesterol
+saturated fatty acids	23448	Saturated Fatty Acids	SFA	SFA	SFA	Saturated fatty acids		Fatty acids	Fatty acids
+saturated fatty acids to total fatty acids	23455	Saturated Fatty Acids to Total Fatty Acids percentage	SFA %	SFA_pct	SFA %	Ratio of saturated fatty acids to total fatty acids		Fatty acids	Fatty acid ratios
+sphingomyelins	23438	Sphingomyelins	Sphingomyelins	Sphingomyelins	Sphingomyelins	Sphingomyelins		Other lipids	Other lipids
+total cholesterol	23400	Total Cholesterol	Total-C	Total_C	Total-C	Total cholesterol		Cholesterol	Cholesterol
+total cholesterol minus hdl-c	23401	Total Cholesterol Minus HDL-C	non-HDL-C	non_HDL_C	non-HDL-C	Total cholesterol minus HDL-C		Cholesterol	Cholesterol
+total cholines	23436	Total Cholines	Cholines	Cholines	Total cholines	Total cholines		Other lipids	Other lipids
+total concentration of branched-chain amino acids (leucine + isoleucine + valine)	23464	Total Concentration of Branched-Chain Amino Acids (Leucine + Isoleucine + Valine)	Total BCAA	Total_BCAA	Total BCAA	Total concentration of branched-chain amino acids (leucine + isoleucine + valine)		Amino acids	Branched-chain amino acids
+total concentration of lipoprotein particles	23427	Total Concentration of Lipoprotein Particles	Total-P	Total_P	Total-P	Total concentration of lipoprotein particles		Lipoprotein particle concentrations	Lipoprotein particle concentrations
+total esterified cholesterol	23415	Total Esterified Cholesterol	Total-CE	Total_CE	Total-CE	Total esterified cholesterol		Cholesteryl esters	Cholesteryl esters
+total fatty acids	23442	Total Fatty Acids	Total-FA	Total_FA	Total fatty acids	Total fatty acids		Fatty acids	Fatty acids
+total free cholesterol	23419	Total Free Cholesterol	Total-FC	Total_FC	Total-FC	Total free cholesterol		Free cholesterol	Free cholesterol
+total lipids in chylomicrons and extremely large vldl	23482	Total Lipids in Chylomicrons and Extremely Large VLDL	XXL-VLDL-L	XXL_VLDL_L	XXL-VLDL-L	Total lipids in chylomicrons and extremely large VLDL		Lipoprotein subclasses	Chylomicrons and extremely large VLDL
+total lipids in hdl	23426	Total Lipids in HDL	HDL-L	HDL_L	HDL-L	Total lipids in HDL		Total lipids	Total lipids
+total lipids in idl	23524	Total Lipids in IDL	IDL-L	IDL_L	IDL-L	Total lipids in IDL		Lipoprotein subclasses	IDL
+total lipids in large hdl	23559	Total Lipids in Large HDL	L-HDL-L	L_HDL_L	L-HDL-L	Total lipids in large HDL		Lipoprotein subclasses	Large HDL
+total lipids in large ldl	23531	Total Lipids in Large LDL	L-LDL-L	L_LDL_L	L-LDL-L	Total lipids in large LDL		Lipoprotein subclasses	Large LDL
+total lipids in large vldl	23496	Total Lipids in Large VLDL	L-VLDL-L	L_VLDL_L	L-VLDL-L	Total lipids in large VLDL		Lipoprotein subclasses	Large VLDL
+total lipids in ldl	23425	Total Lipids in LDL	LDL-L	LDL_L	LDL-L	Total lipids in LDL		Total lipids	Total lipids
+total lipids in lipoprotein particles	23423	Total Lipids in Lipoprotein Particles	Total-L	Total_L	Total-L	Total lipids in lipoprotein particles		Total lipids	Total lipids
+total lipids in medium hdl	23566	Total Lipids in Medium HDL	M-HDL-L	M_HDL_L	M-HDL-L	Total lipids in medium HDL		Lipoprotein subclasses	Medium HDL
+total lipids in medium ldl	23538	Total Lipids in Medium LDL	M-LDL-L	M_LDL_L	M-LDL-L	Total lipids in medium LDL		Lipoprotein subclasses	Medium LDL
+total lipids in medium vldl	23503	Total Lipids in Medium VLDL	M-VLDL-L	M_VLDL_L	M-VLDL-L	Total lipids in medium VLDL		Lipoprotein subclasses	Medium VLDL
+total lipids in small hdl	23573	Total Lipids in Small HDL	S-HDL-L	S_HDL_L	S-HDL-L	Total lipids in small HDL		Lipoprotein subclasses	Small HDL
+total lipids in small ldl	23545	Total Lipids in Small LDL	S-LDL-L	S_LDL_L	S-LDL-L	Total lipids in small LDL		Lipoprotein subclasses	Small LDL
+total lipids in small vldl	23510	Total Lipids in Small VLDL	S-VLDL-L	S_VLDL_L	S-VLDL-L	Total lipids in small VLDL		Lipoprotein subclasses	Small VLDL
+total lipids in very large hdl	23552	Total Lipids in Very Large HDL	XL-HDL-L	XL_HDL_L	XL-HDL-L	Total lipids in very large HDL		Lipoprotein subclasses	Very large HDL
+total lipids in very large vldl	23489	Total Lipids in Very Large VLDL	XL-VLDL-L	XL_VLDL_L	XL-VLDL-L	Total lipids in very large VLDL		Lipoprotein subclasses	Very large VLDL
+total lipids in very small vldl	23517	Total Lipids in Very Small VLDL	XS-VLDL-L	XS_VLDL_L	XS-VLDL-L	Total lipids in very small VLDL		Lipoprotein subclasses	Very small VLDL
+total lipids in vldl	23424	Total Lipids in VLDL	VLDL-L	VLDL_L	VLDL-L	Total lipids in VLDL		Total lipids	Total lipids
+total phospholipids in lipoprotein particles	23411	Total Phospholipids in Lipoprotein Particles	Total-PL	Total_PL	Total-PL	Total phospholipids in lipoprotein particles		Phospholipids	Phospholipids
+total triglycerides	23407	Total Triglycerides	Total-TG	Total_TG	Total triglycerides	Total triglycerides		Triglycerides	Triglycerides
+triglycerides in chylomicrons and extremely large vldl	23487	Triglycerides in Chylomicrons and Extremely Large VLDL	XXL-VLDL-TG	XXL_VLDL_TG	XXL-VLDL-TG	Triglycerides in chylomicrons and extremely large VLDL		Lipoprotein subclasses	Chylomicrons and extremely large VLDL
+triglycerides in hdl	23410	Triglycerides in HDL	HDL-TG	HDL_TG	HDL-TG	Triglycerides in HDL		Triglycerides	Triglycerides
+triglycerides in idl	23529	Triglycerides in IDL	IDL-TG	IDL_TG	IDL-TG	Triglycerides in IDL		Lipoprotein subclasses	IDL
+triglycerides in large hdl	23564	Triglycerides in Large HDL	L-HDL-TG	L_HDL_TG	L-HDL-TG	Triglycerides in large HDL		Lipoprotein subclasses	Large HDL
+triglycerides in large ldl	23536	Triglycerides in Large LDL	L-LDL-TG	L_LDL_TG	L-LDL-TG	Triglycerides in large LDL		Lipoprotein subclasses	Large LDL
+triglycerides in large vldl	23501	Triglycerides in Large VLDL	L-VLDL-TG	L_VLDL_TG	L-VLDL-TG	Triglycerides in large VLDL		Lipoprotein subclasses	Large VLDL
+triglycerides in ldl	23409	Triglycerides in LDL	LDL-TG	LDL_TG	LDL-TG	Triglycerides in LDL		Triglycerides	Triglycerides
+triglycerides in medium hdl	23571	Triglycerides in Medium HDL	M-HDL-TG	M_HDL_TG	M-HDL-TG	Triglycerides in medium HDL		Lipoprotein subclasses	Medium HDL
+triglycerides in medium ldl	23543	Triglycerides in Medium LDL	M-LDL-TG	M_LDL_TG	M-LDL-TG	Triglycerides in medium LDL		Lipoprotein subclasses	Medium LDL
+triglycerides in medium vldl	23508	Triglycerides in Medium VLDL	M-VLDL-TG	M_VLDL_TG	M-VLDL-TG	Triglycerides in medium VLDL		Lipoprotein subclasses	Medium VLDL
+triglycerides in small hdl	23578	Triglycerides in Small HDL	S-HDL-TG	S_HDL_TG	S-HDL-TG	Triglycerides in small HDL		Lipoprotein subclasses	Small HDL
+triglycerides in small ldl	23550	Triglycerides in Small LDL	S-LDL-TG	S_LDL_TG	S-LDL-TG	Triglycerides in small LDL		Lipoprotein subclasses	Small LDL
+triglycerides in small vldl	23515	Triglycerides in Small VLDL	S-VLDL-TG	S_VLDL_TG	S-VLDL-TG	Triglycerides in small VLDL		Lipoprotein subclasses	Small VLDL
+triglycerides in very large hdl	23557	Triglycerides in Very Large HDL	XL-HDL-TG	XL_HDL_TG	XL-HDL-TG	Triglycerides in very large HDL		Lipoprotein subclasses	Very large HDL
+triglycerides in very large vldl	23494	Triglycerides in Very Large VLDL	XL-VLDL-TG	XL_VLDL_TG	XL-VLDL-TG	Triglycerides in very large VLDL		Lipoprotein subclasses	Very large VLDL
+triglycerides in very small vldl	23522	Triglycerides in Very Small VLDL	XS-VLDL-TG	XS_VLDL_TG	XS-VLDL-TG	Triglycerides in very small VLDL		Lipoprotein subclasses	Very small VLDL
+triglycerides in vldl	23408	Triglycerides in VLDL	VLDL-TG	VLDL_TG	VLDL-TG	Triglycerides in VLDL		Triglycerides	Triglycerides
+triglycerides to phosphoglycerides	23435	Triglycerides to Phosphoglycerides ratio	TG/PG	TG_by_PG	TG/PG	Ratio of triglycerides to phosphoglycerides		Other lipids	Other lipids
+triglycerides to total lipids in chylomicrons and extremely large vldl	23583	Triglycerides to Total Lipids in Chylomicrons and Extremely Large VLDL percentage	XXL-VLDL-TG %	XXL_VLDL_TG_pct	XXL-VLDL-TG %	Triglycerides to total lipids ratio in chylomicrons and extremely large VLDL		Relative lipoprotein lipid concentrations	Chylomicrons and extremely large VLDL ratios
+triglycerides to total lipids in idl	23613	Triglycerides to Total Lipids in IDL percentage	IDL-TG %	IDL_TG_pct	IDL-TG %	Triglycerides to total lipids ratio in IDL		Relative lipoprotein lipid concentrations	IDL ratios
+triglycerides to total lipids in large hdl	23638	Triglycerides to Total Lipids in Large HDL percentage	L-HDL-TG %	L_HDL_TG_pct	L-HDL-TG %	Triglycerides to total lipids ratio in large HDL		Relative lipoprotein lipid concentrations	Large HDL ratios
+triglycerides to total lipids in large ldl	23618	Triglycerides to Total Lipids in Large LDL percentage	L-LDL-TG %	L_LDL_TG_pct	L-LDL-TG %	Triglycerides to total lipids ratio in large LDL		Relative lipoprotein lipid concentrations	Large LDL ratios
+triglycerides to total lipids in large vldl	23593	Triglycerides to Total Lipids in Large VLDL percentage	L-VLDL-TG %	L_VLDL_TG_pct	L-VLDL-TG %	Triglycerides to total lipids ratio in large VLDL		Relative lipoprotein lipid concentrations	Large VLDL ratios
+triglycerides to total lipids in medium hdl	23643	Triglycerides to Total Lipids in Medium HDL percentage	M-HDL-TG %	M_HDL_TG_pct	M-HDL-TG %	Triglycerides to total lipids ratio in medium HDL		Relative lipoprotein lipid concentrations	Medium HDL ratios
+triglycerides to total lipids in medium ldl	23623	Triglycerides to Total Lipids in Medium LDL percentage	M-LDL-TG %	M_LDL_TG_pct	M-LDL-TG %	Triglycerides to total lipids ratio in medium LDL		Relative lipoprotein lipid concentrations	Medium LDL ratios
+triglycerides to total lipids in medium vldl	23598	Triglycerides to Total Lipids in Medium VLDL percentage	M-VLDL-TG %	M_VLDL_TG_pct	M-VLDL-TG %	Triglycerides to total lipids ratio in medium VLDL		Relative lipoprotein lipid concentrations	Medium VLDL ratios
+triglycerides to total lipids in small hdl	23648	Triglycerides to Total Lipids in Small HDL percentage	S-HDL-TG %	S_HDL_TG_pct	S-HDL-TG %	Triglycerides to total lipids ratio in small HDL		Relative lipoprotein lipid concentrations	Small HDL ratios
+triglycerides to total lipids in small ldl	23628	Triglycerides to Total Lipids in Small LDL percentage	S-LDL-TG %	S_LDL_TG_pct	S-LDL-TG %	Triglycerides to total lipids ratio in small LDL		Relative lipoprotein lipid concentrations	Small LDL ratios
+triglycerides to total lipids in small vldl	23603	Triglycerides to Total Lipids in Small VLDL percentage	S-VLDL-TG %	S_VLDL_TG_pct	S-VLDL-TG %	Triglycerides to total lipids ratio in small VLDL		Relative lipoprotein lipid concentrations	Small VLDL ratios
+triglycerides to total lipids in very large hdl	23633	Triglycerides to Total Lipids in Very Large HDL percentage	XL-HDL-TG %	XL_HDL_TG_pct	XL-HDL-TG %	Triglycerides to total lipids ratio in very large HDL		Relative lipoprotein lipid concentrations	Very large HDL ratios
+triglycerides to total lipids in very large vldl	23588	Triglycerides to Total Lipids in Very Large VLDL percentage	XL-VLDL-TG %	XL_VLDL_TG_pct	XL-VLDL-TG %	Triglycerides to total lipids ratio in very large VLDL		Relative lipoprotein lipid concentrations	Very large VLDL ratios
+triglycerides to total lipids in very small vldl	23608	Triglycerides to Total Lipids in Very Small VLDL percentage	XS-VLDL-TG %	XS_VLDL_TG_pct	XS-VLDL-TG %	Triglycerides to total lipids ratio in very small VLDL		Relative lipoprotein lipid concentrations	Very small VLDL ratios
+tyrosine	23469	Tyrosine	Tyr	Tyr	Tyrosine	Tyrosine		Amino acids	Aromatic amino acids
+valine	23467	Valine	Val	Val	Valine	Valine		Amino acids	Branched-chain amino acids
+vldl cholesterol	23403	VLDL Cholesterol	VLDL-C	VLDL_C	VLDL-C	VLDL cholesterol		Cholesterol	Cholesterol
