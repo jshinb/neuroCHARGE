@@ -46,4 +46,7 @@ setdiff(ukb_metabo_vars$tmpID,NG_biomarker_metadata$tmpID)
 intersect(names(ukb_metabo_vars),names(NG_biomarker_metadata))
 
 ukb_metabo_vars = merge(ukb_metabo_vars,NG_biomarker_metadata)
+# unlist(lapply(lapply(ukb_metabo_vars$alternative_names,str_length),which.min))
+# sapply(ukb_metabo_vars$alternative_names, function(x) x[which.min(str_length(x))])
+
 write_tsv(ukb_metabo_vars,"metadata/NG_UKB_mathced_metaboIDs.tsv")          
