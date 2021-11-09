@@ -68,7 +68,6 @@ var.names.e1 = c(
   "dementia" = '42018-0.0',
   "stroke" = '42006-0.0')
 e1 = extract_variables(fe1,fieldID=var.names.e1,fieldName=names(var.names.e1))
-head(e2)
 excl.dementia <- e1$eid[!is.na(e1$dementia)]
 excl.stroke <- e1$eid[!is.na(e1$stroke)]
 
