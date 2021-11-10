@@ -397,6 +397,13 @@ table(covdata$HTN,useNA='a')
 #https://academic.oup.com/eurheartj/article/39/suppl_1/ehy563.3028/5080338
 prop.table(table(covdata$HTN))#46% with HTN? (in the individuals with brain MRI)
 
+brain_data = brain_data %>% dplyr::arrange(eid)
+metabo_data = metabo_data %>% dplyr::arrange(eid)
+covdata = covdata %>% dplyr::arrange(eid)
+
+identical(brain_data$eid,metabo_data$eid)
+identical(brain_data$eid,covdata$eid)
+
 # write files ------------------------------------------------------------------
 write_tsv(brain_data,"../data/ukb_brain_data.tsv")
 write_tsv(metabo_data,"../data/ukb_metabo_data.tsv")
