@@ -408,5 +408,3 @@ identical(brain_data$eid,covdata$eid)
 write_tsv(brain_data,"../data/ukb_brain_data.tsv")
 write_tsv(metabo_data,"../data/ukb_metabo_data.tsv")
 write_tsv(covdata,"../data/ukb_covdata.tsv")
-
-
