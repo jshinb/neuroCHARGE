@@ -134,6 +134,7 @@ d2 = subset(d2, !eid %in% excl.dementia.stroke);print(dim(d2))
 d1 = subset(d1, eid %in% incl);print(dim(d1))
 d2 = subset(d2, eid %in% incl);print(dim(d2))
 
+# ------------------------------------------------------------------------------
 #========================================================================================#
 # exclude related individuals based on genetic relatedness: n=7805 (-61)
 #========================================================================================#
@@ -282,8 +283,9 @@ print(all(metabo_data$eid %in% brain_data$eid))
 
 rm(d1,d2)
 
+# ------------------------------------------------------------------------------
 #==============================================================================#
-# get covariate data
+# get covariate data: NEED TO GET DIABETES + HTN data
 #==============================================================================#
 # 0. genetic sex 
 f.c0 = file.path(ukbb_data_dir,'ukb_01-04-2020/41449/ukb41449.csv')
@@ -292,26 +294,112 @@ c0 = extract_variables(f.c0,fieldID=varnames.c0,fieldName=names(varnames.c0))
 head(c0,3)
 
 # 1. fasting time, medication
+###############################################################################
+# coding
+# 1	Cholesterol lowering medication #need the baseline value 
+# 2	Blood pressure medication # for HTN (at imaging)
+# 3	Insulin # for T1D and severe T2-DM (at imaging)
+# 4	Hormone replacement therapy
+# 5	Oral contraceptive pill or minipill
+# -7	None of the above
+# -1	Do not know
+# -3	Prefer not to answer
+###############################################################################
 f.c1 = file.path(ukbb_data_dir,'ukb40646_20-02-2020/ukb40646.csv')
-varnames.c1 = c(fasting_time = '74-0.0',medication = '6153-0.0')
+varnames.c1 = c(
+  fasting_time = '74-0.0',
+  medication01 = '6153-0.0',
+  medication02 = '6153-0.1',
+  medication03 = '6153-0.2'
+#  medication1 = '6153-2.0',
+#  medication2 = '6153-2.1',
+#  medication3 = '6153-2.2'
+)
 c1 = extract_variables(f.c1,fieldID=varnames.c1,fieldName=names(varnames.c1))
-head(c1,3)
+c1 <- c1 %>% 
+  mutate(medication01 = ifelse(is.na(medication01),0,medication01)) %>%
+  mutate(medication01 = ifelse(medication01==-7,0,medication01)) %>%
+  mutate(medication01 = ifelse(medication01 %in% c(-1,-3),NA,medication01)) %>%
+  mutate(medication02 = ifelse(is.na(medication02),0,medication02)) %>%
+  mutate(medication03 = ifelse(is.na(medication03),0,medication03)) %>%
+  mutate(chol_lowering_med = ifelse(medication01==1,1,0)) %>%
+  mutate(bp_med = ifelse((medication01==2|medication02==2),1,0)) %>%
+  mutate(insulin = ifelse(((medication01==3|medication02==3)|medication03==3),1,0))
+for(i in c('chol_lowering_med','bp_med','insulin')){
+  print(tab <- table(c1[[i]]))
+  print(table(c1[[i]],useNA = 'a'))
+  print(prop.table(tab))
+}
 
 #2. age, sex, bmi, smoking, ethnicity
+################################################################################
+# smoking code
+# 
+# Coding	Meaning
+# -3	Prefer not to answer
+# 0	Never
+# 1	Previous
+# 2	Current
+################################################################################
 f.c2 = file.path(ukbb_data_dir,'ukb_01-04-2020/41448/ukb41448.csv')
 varnames.c2 = c("age01" = '21022-0.0', "age0" = '21003-0.0',#are these the same?
                 "age1" = '21003-2.0',
                 "sex" = '31-0.0',
-                "BMI"="21001-2.0",
+                "BMI0"="21001-0.0",
+                "BMI1"="21001-2.0",
+                "smoking0" = "20116-0.0",
                 "smoking" = "20116-2.0",
+                "SBP_manual0" = "93-0.0","SBP_auto0" = "4080-0.0",# at the time of blood sample
+                "DBP_manual0" = "94-0.0","DBP_auto0" = "4079-0.0",# at the time of blood sample
                 'ethnicity' = '21000-0.0')#may not need this
 c2 = extract_variables(f.c2,fieldID=varnames.c2,fieldName=names(varnames.c2))
-head(c2,3)
+c2 <- c2 %>% 
+  mutate(SBP0=ifelse(is.na(SBP_auto0)&!is.na(SBP_manual0),SBP_manual0,SBP_auto0)) %>% 
+  mutate(DBP0=ifelse(is.na(DBP_auto0)&!is.na(DBP_manual0),DBP_manual0,DBP_auto0)) %>%
+  mutate(highSBP = ifelse(SBP0>=140,1,0),highDBP=ifelse(DBP0>=90,1,0)) %>%
+  mutate(highBP = ifelse(highSBP+highDBP>0,1,0)) %>%
+  mutate(smoking0 = ifelse(smoking0==-3,NA,smoking0)) %>%
+  mutate(current_smoking0 = ifelse(smoking0==1,1,0)) %>%
+  mutate(smoking = ifelse(smoking==-3,NA,smoking)) %>%
+  mutate(current_smoking = ifelse(smoking==1,1,0))
+table(c2$smoking,c2$current_smoking,useNA='a')
+c2 <- c2 %>% dplyr::select(-highSBP,-highDBP,-SBP_auto0,-DBP_auto0,-SBP_manual0,-DBP_manual0)
+summary(c2)
 
+#3. derive T2D
+################################################################################
+Diabetes <- c("E110", "E111", "E112", "E113", "E114", "E115", "E116",
+              "E117", "E118", "E119", 
+              "E121", "E128", "E129",
+              "E131", "E132", "E133", "E134", "E135", "E136", "E137",
+              "E138", "E139",
+              "E140", "E141", "E142", "E143", "E144", "E145", "E146",
+              "E147", "E148", "E149",
+              "O241", "O243", "O244", "O249")
+################################################################################
+
+f.c3 = file.path(ukbb_data_dir,'ukb42388_18062020/ukb42388.csv')
+c3= fread(f.c3)
+varnames.c3 = names(c3)[str_detect(names(c3),"41270-0")]
+c3 = subset(c3, select=c('eid',varnames.c3))
+c3 <- c3 %>% mutate(T2D = apply(c3, 1, function(x)as.integer(
+  any(grep(paste(Diabetes,collapse="|"),x)))))
+c3 <- dplyr::select(c3, eid, T2D)#1-yes; 0-no
+
+#4. merge cov data sets 
 covdata = merge(c0,c1);print(dim(covdata))
 covdata = merge(covdata,c2);print(dim(covdata))
+covdata = merge(covdata,c3);print(dim(covdata))
 covdata = subset(covdata ,eid %in% brain_data$eid);print(dim(covdata))
+# define hypertension
+covdata = covdata %>% mutate(HTN = ifelse(bp_med==1|highBP==1,1,0))
+table(covdata$HTN,useNA='a')
+#https://academic.oup.com/eurheartj/article/39/suppl_1/ehy563.3028/5080338
+prop.table(table(covdata$HTN))#46% with HTN? (in the individuals with brain MRI)
 
+# write files ------------------------------------------------------------------
 write_tsv(brain_data,"../data/ukb_brain_data.tsv")
 write_tsv(metabo_data,"../data/ukb_metabo_data.tsv")
 write_tsv(covdata,"../data/ukb_covdata.tsv")
+
+
