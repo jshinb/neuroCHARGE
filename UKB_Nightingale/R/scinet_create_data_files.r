@@ -310,10 +310,11 @@ varnames.c1 = c(
   fasting_time = '74-0.0',
   medication01 = '6153-0.0',
   medication02 = '6153-0.1',
-  medication03 = '6153-0.2'
-#  medication1 = '6153-2.0',
-#  medication2 = '6153-2.1',
-#  medication3 = '6153-2.2'
+  medication03 = '6153-0.2',
+  creatinine = '30700-0.0'
+  #  medication1 = '6153-2.0',
+  #  medication2 = '6153-2.1',
+  #  medication3 = '6153-2.2'
 )
 c1 = extract_variables(f.c1,fieldID=varnames.c1,fieldName=names(varnames.c1))
 c1 <- c1 %>% 
@@ -352,6 +353,7 @@ varnames.c2 = c("age01" = '21022-0.0', "age0" = '21003-0.0',#are these the same?
                 "SBP_manual0" = "93-0.0","SBP_auto0" = "4080-0.0",# at the time of blood sample
                 "DBP_manual0" = "94-0.0","DBP_auto0" = "4079-0.0",# at the time of blood sample
                 'ethnicity' = '21000-0.0')#may not need this
+
 c2 = extract_variables(f.c2,fieldID=varnames.c2,fieldName=names(varnames.c2))
 c2 <- c2 %>% 
   mutate(SBP0=ifelse(is.na(SBP_auto0)&!is.na(SBP_manual0),SBP_manual0,SBP_auto0)) %>% 
@@ -365,7 +367,6 @@ c2 <- c2 %>%
 table(c2$smoking,c2$current_smoking,useNA='a')
 c2 <- c2 %>% dplyr::select(-highSBP,-highDBP,-SBP_auto0,-DBP_auto0,-SBP_manual0,-DBP_manual0)
 summary(c2)
-
 #3. derive T2D
 ################################################################################
 Diabetes <- c("E110", "E111", "E112", "E113", "E114", "E115", "E116",
@@ -377,7 +378,6 @@ Diabetes <- c("E110", "E111", "E112", "E113", "E114", "E115", "E116",
               "E147", "E148", "E149",
               "O241", "O243", "O244", "O249")
 ################################################################################
-
 f.c3 = file.path(ukbb_data_dir,'ukb42388_18062020/ukb42388.csv')
 c3= fread(f.c3)
 varnames.c3 = names(c3)[str_detect(names(c3),"41270-0")]
@@ -386,21 +386,46 @@ c3 <- c3 %>% mutate(T2D = apply(c3, 1, function(x)as.integer(
   any(grep(paste(Diabetes,collapse="|"),x)))))
 c3 <- dplyr::select(c3, eid, T2D)#1-yes; 0-no
 
-#4. merge cov data sets 
+#4. statin medication
+fe1=file.path(ukbb_data_dir,'ukb42388_18062020/ukb42388.csv')
+varnames.c4 = paste("20003-0",c(0:47),sep=".")
+names(varnames.c4) = str_replace(varnames.c4 ,"20003-0[.]","med")
+c4 = extract_variables(fe1,fieldID=varnames.c4,fieldName=names(varnames.c4))
+
+table(c4$med0)
+drug = fread("scripts/drug_list.txt")
+statin=c('atorvastatin','fluvastatin','pravastatin','rosuvastatin','simvastatin')
+statin_coding = subset(drug,meaning %in% statin)$coding
+
+med_cols = names(c4)[-1]
+eid_on_statin = c()
+for(mi in med_cols){
+  eid_on_statin = c(eid_on_statin,c4$eid[c4[[mi]] %in% statin_coding]);print(length(eid_on_statin))
+}
+
+#5. merge cov data sets 
 covdata = merge(c0,c1);print(dim(covdata))
 covdata = merge(covdata,c2);print(dim(covdata))
 covdata = merge(covdata,c3);print(dim(covdata))
 covdata = subset(covdata ,eid %in% brain_data$eid);print(dim(covdata))
+
 # define hypertension
 covdata = covdata %>% mutate(HTN = ifelse(bp_med==1|highBP==1,1,0))
 table(covdata$HTN,useNA='a')
+covdata = covdata %>% 
+  mutate(on_statin = ifelse(eid %in% eid_on_statin,1,0))
+covdata = covdata %>% 
+  mutate(on_other_lipid_med = ifelse((on_statin==0 & chol_lowering_med==1),1,0))
+
 #https://academic.oup.com/eurheartj/article/39/suppl_1/ehy563.3028/5080338
 prop.table(table(covdata$HTN))#46% with HTN? (in the individuals with brain MRI)
 
 brain_data = brain_data %>% dplyr::arrange(eid)
 metabo_data = metabo_data %>% dplyr::arrange(eid)
 covdata = covdata %>% dplyr::arrange(eid)
-
+covdata = covdata %>% mutate(years = age1-age0)
+covdata = covdata %>% mutate(years = age1-age0)
+#GFR (mL/min/1.73 m²) = 175 × (Scr/88.4)-1.154 × (Age)-0.203 × (0.742 if female) × (1.212 if African American) (SI units)
 identical(brain_data$eid,metabo_data$eid)
 identical(brain_data$eid,covdata$eid)
 
