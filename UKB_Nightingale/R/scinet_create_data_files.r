@@ -28,6 +28,10 @@ extract_variables = function(fname,fieldID,fieldName){
   }
 }
 
+# set working directory ------------------------------------------------------------------
+wd = '/gpfs/fs1/home/t/tpaus/jshinb/ukbb_LDL.D_gwas'
+setwd(wd)
+
 #========================================================================================#
 # data directory
 #========================================================================================#
@@ -47,10 +51,6 @@ cat(dir(file.path(ukbb_data_dir,'ukb_01-04-2020')),sep='\n')
 #41448
 #41449
 #41450
-
-# set working directory ------------------------------------------------------------------
-wd = '/gpfs/fs1/home/t/tpaus/jshinb/ukbb_LDL.D_gwas'
-setwd(wd)
 
 #-------------------------------------------------------------------------------
 # IDs to be excluded
@@ -333,6 +333,7 @@ for(i in c('chol_lowering_med','bp_med','insulin')){
 }
 
 #2. age, sex, bmi, smoking, ethnicity
+cat("extracting age, sex, bmi, smoking and ethnicity\n")
 ################################################################################
 # smoking code
 # 
@@ -368,6 +369,7 @@ table(c2$smoking,c2$current_smoking,useNA='a')
 c2 <- c2 %>% dplyr::select(-highSBP,-highDBP,-SBP_auto0,-DBP_auto0,-SBP_manual0,-DBP_manual0)
 summary(c2)
 #3. derive T2D
+cat("deriving T2D status\n")
 ################################################################################
 Diabetes <- c("E110", "E111", "E112", "E113", "E114", "E115", "E116",
               "E117", "E118", "E119", 
@@ -386,7 +388,8 @@ c3 <- c3 %>% mutate(T2D = apply(c3, 1, function(x)as.integer(
   any(grep(paste(Diabetes,collapse="|"),x)))))
 c3 <- dplyr::select(c3, eid, T2D)#1-yes; 0-no
 
-#4. statin medication
+#4. lipid lowering medication
+cat("extracting lipid lowering medication usage\n")
 fe1=file.path(ukbb_data_dir,'ukb42388_18062020/ukb42388.csv')
 varnames.c4 = paste("20003-0",c(0:47),sep=".")
 names(varnames.c4) = str_replace(varnames.c4 ,"20003-0[.]","med")
@@ -404,32 +407,142 @@ for(mi in med_cols){
 }
 
 #5. merge cov data sets 
+cat("merging covariate data sets\n")
 covdata = merge(c0,c1);print(dim(covdata))
 covdata = merge(covdata,c2);print(dim(covdata))
 covdata = merge(covdata,c3);print(dim(covdata))
 covdata = subset(covdata ,eid %in% brain_data$eid);print(dim(covdata))
 
-# define hypertension
+#6. hypertension, statin usage, other lipid-lowering medication usage
+cat("hypertension, statin usage, other lipid-lowering medication usage\n")
 covdata = covdata %>% mutate(HTN = ifelse(bp_med==1|highBP==1,1,0))
+#https://academic.oup.com/eurheartj/article/39/suppl_1/ehy563.3028/5080338
 table(covdata$HTN,useNA='a')
+prop.table(table(covdata$HTN))#46% with HTN? (in the individuals with brain MRI)
 covdata = covdata %>% 
   mutate(on_statin = ifelse(eid %in% eid_on_statin,1,0))
 covdata = covdata %>% 
   mutate(on_other_lipid_med = ifelse((on_statin==0 & chol_lowering_med==1),1,0))
+covdata = covdata %>% mutate(years = age1-age0)
+# eGFR
+eGFR_function = function(Scr,Age, is.female, is.african=0){
+  #Scr: µmol/L
+  eGFR = 175*(Scr/88.4)^(-1.154)*Age^(-0.203)*(0.742^is.female)*(1.212^is.african)
+  eGFR
+}
+covdata[['eGFR']] = 
+  eGFR_function(Scr = covdata$creatinine, 
+                Age = covdata$age0, 
+                is.female = covdata$genetic.sex==0)
+covdata = covdata %>% mutate(eGFR = ifelse(eGFR>200,NA,eGFR))
 
-#https://academic.oup.com/eurheartj/article/39/suppl_1/ehy563.3028/5080338
-prop.table(table(covdata$HTN))#46% with HTN? (in the individuals with brain MRI)
+#metabo-QC
+cat("metabo data: removing QC-failed individuals\n")
+###############################################################################
+# Coding	Meaning
+# 1	Below limit of quantification
+# 2	Citrate plasma
+# 3	Degraded sample
+# 4	High ethanol
+# 5	Isopropyl alcohol
+# 6	Low glutamine or high glutamate
+# 7	Medium ethanol
+# 8	Polysaccharides
+# 9	Unknown contamination
+# 10	Ethanol
+###############################################################################
+QC_colnames = fread("scripts/QC_colnames.txt")
+QC_colnames = subset(QC_colnames,str_detect(UDI,"-0."))
+QC_colnames = QC_colnames %>% 
+  mutate(`QC Field ID` = str_split(UDI,"-",simplify = T)[,1], Description2 = Description) %>%
+  mutate(Description = str_split(Description,",",simplify = T)[,1])%>% 
+  dplyr::select(-Description2, -Count, -Column)
+head(QC_colnames)
+NG_metabo = fread('scripts/NG_UKB_mathced_metaboIDs.tsv')
+QC_colnames_wi_metaboIDs = 
+  merge(QC_colnames,subset(NG_metabo,select = c(Description,`Field ID`)),
+        all.x=T,sort=F)
+dup.FID = QC_colnames_wi_metaboIDs$`QC Field ID`[duplicated(QC_colnames_wi_metaboIDs$`QC Field ID`)]
+for(FID in dup.FID) {
+  indNA = QC_colnames_wi_metaboIDs$`QC Field ID` == FID & is.na(QC_colnames_wi_metaboIDs$`Field ID`)
+  ind = QC_colnames_wi_metaboIDs$`QC Field ID` == FID & !is.na(QC_colnames_wi_metaboIDs$`Field ID`)
+  QC_colnames_wi_metaboIDs$`Field ID`[indNA] <- QC_colnames_wi_metaboIDs$`Field ID`[ind]
+}
 
+# metabo QC_data
+f2 = '/gpfs/fs1/home/t/tpaus/jshinb/ukbb/ukb48959/ukb48959.csv'
+d2 = fread(f2)
+varnames2=QC_colnames$UDI
+names(varnames2) = varnames2
+d2 = extract_variables(f2,varnames2,names(varnames2))
+sum.na = apply(apply(subset(d2,select=-eid),2,is.na),1,sum)
+table(sum.na)
+d2 = subset(d2,sum.na!=149)
+rm(sum.na)
+d2 = subset(d2,eid %in% metabo_data$eid)#7249
+
+# 
+tmp_metabo_data = metabo_data
+Description <- n_removed <- coding <- metabo_FieldID <- UDI <- c()
+for (i in 1:nrow(QC_colnames_wi_metaboIDs)) {
+  mi = as.character(QC_colnames_wi_metaboIDs$`Field ID`[i])
+  metabo_FieldID = c(metabo_FieldID,mi)
+  qi= QC_colnames_wi_metaboIDs$UDI[i]
+  UDI = c(UDI,qi)
+  
+  eid_QCi = d2$eid[!is.na(d2[[qi]])]
+  n_removed  = c(n_removed,length(eid_QCi))
+  Description = c(Description,QC_colnames_wi_metaboIDs$Description[i])
+  coding = c(coding,list(paste(unique(d2[[qi]][!is.na(d2[[qi]])]),sep=",")))
+  if(n_removed[i]){
+    print(n_removed[i])
+    print(Description[i])
+    tmp_metabo_data[[mi]][tmp_metabo_data$eid %in% eid_QCi] <- NA
+  }
+}
+metabo_QC_info = data.table(`FieldID` = metabo_FieldID,
+                            UDI,Description,n_removed,coding)
+rm(metabo_FieldID,UDI,Description,n_removed,coding)
+metaboQC_info = 
+        subset(merge(QC_colnames_wi_metaboIDs,metabo_QC_info,by="Description"),
+       UDI.x==UDI.y) %>% arrange(`Field ID`)
+subset(metaboQC_info,`Field ID`==23474)
+dup.FID =metaboQC_info$`Field ID`[duplicated(metaboQC_info$`Field ID`)]
+for(FID in dup.FID) {
+  indNA = metaboQC_info$`Field ID` == FID & metaboQC_info$`Description`==""
+  ind = metaboQC_info$`Field ID` == FID & metaboQC_info$`Description`!=""
+  metaboQC_info$`Description`[indNA] <- metaboQC_info$`Description`[ind]
+}
+subset(metaboQC_info,`Field ID`==23474)
+write_tsv(metaboQC_info,"metaboQC_info.tsv")
+
+summary(tmp_metabo_data %>% dplyr::select(unique(metaboQC_info$FieldID[metaboQC_info$n_removed>0])))
+summary(metabo_data %>% dplyr::select(unique(metaboQC_info$FieldID[metaboQC_info$n_removed>0])))
+
+print(identical(names(metabo_data),names(tmp_metabo_data)))
+print(identical(metabo_data$eid,tmp_metabo_data$eid))
+metabo_data = tmp_metabo_data
+
+# arrange ----------------------------------------------------------------------
+cat("arrange rows\n")
 brain_data = brain_data %>% dplyr::arrange(eid)
 metabo_data = metabo_data %>% dplyr::arrange(eid)
 covdata = covdata %>% dplyr::arrange(eid)
-covdata = covdata %>% mutate(years = age1-age0)
-covdata = covdata %>% mutate(years = age1-age0)
-#GFR (mL/min/1.73 m²) = 175 × (Scr/88.4)-1.154 × (Age)-0.203 × (0.742 if female) × (1.212 if African American) (SI units)
-identical(brain_data$eid,metabo_data$eid)
-identical(brain_data$eid,covdata$eid)
+
+print(identical(brain_data$eid,metabo_data$eid))
+print(identical(brain_data$eid,covdata$eid))
 
 # write files ------------------------------------------------------------------
 write_tsv(brain_data,"../data/ukb_brain_data.tsv")
 write_tsv(metabo_data,"../data/ukb_metabo_data.tsv")
 write_tsv(covdata,"../data/ukb_covdata.tsv")
+
+# just testing:
+testing <- function(){
+  is.identical <- c()
+  metabo_data1 = metabo_data
+  load("metabo_data.Rd")
+  for(ci in names(metabo_data)){
+    is.identical = c(is.identical,identical(metabo_data[[ci]],metabo_data1[[ci]]))
+  }
+}
