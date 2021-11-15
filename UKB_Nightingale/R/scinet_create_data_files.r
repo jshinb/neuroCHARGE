@@ -7,7 +7,7 @@
 #
 # Before running the script, execute the following code:
 # module load gcc/9.2.0 r/4.0.3;R
-#
+# FIND OUT HOW TO SUBMIT IT TO CLUSTER!!!
 # This script is available on the GitHub repository:
 # https://github.com/jshinb/neuroCHARGE/tree/main/UKB_Nightingale/R
 #
@@ -287,9 +287,10 @@ rm(d1,d2)
 #==============================================================================#
 # get covariate data: NEED TO GET DIABETES + HTN data
 #==============================================================================#
-# 0. genetic sex 
+# 0. genetic sex and genotype PC
 f.c0 = file.path(ukbb_data_dir,'ukb_01-04-2020/41449/ukb41449.csv')
-varnames.c0=c("genetic.sex"="22001-0.0")
+varnames.c0=c("22001-0.0",paste("22009-0",1:40,sep="."))
+names(varnames.c0) = c("genetic.sex",paste("gPC",1:40,sep=""))
 c0 = extract_variables(f.c0,fieldID=varnames.c0,fieldName=names(varnames.c0))
 head(c0,3)
 
