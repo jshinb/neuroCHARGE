@@ -28,11 +28,15 @@ setwd(wd)
 
 #------------------------------------------------------------------------------
 # read in table files
-ukb_metabo_vars = read_xlsx('../UKB_Nightingale/metadata/DataVariableList.xlsx',sheet=2)
+ukb_metabo_vars = fread("../UKB_Nightingale/metadata/Nightingale_UKB_FieldID.txt")#this does not work
+head(ukb_metabo_vars)
+# ukb_metabo_vars = read_xlsx('../UKB_Nightingale/metadata/DataVariableList.xlsx',sheet=2)
 ukb_metabo_vars = ukb_metabo_vars %>% 
-  mutate(tmpID = str_remove(tolower(Description)," percentage")) %>% 
-  mutate(tmpID = str_remove(tmpID," ratio ")) %>% 
+  # dplyr::rename(Description=title) %>%
+  mutate(tmpID = str_remove(tolower(Description)," percentage")) %>%
+  mutate(tmpID = str_remove(tmpID," ratio ")) %>%
   mutate(tmpID = str_remove(tmpID," ratio"))
+head(ukb_metabo_vars)
 
 NG_biomarker_metadata = (ggforestplot::df_NG_biomarker_metadata)
 NG_biomarker_metadata = NG_biomarker_metadata %>% dplyr::select(-unit)
@@ -45,8 +49,11 @@ NG_biomarker_metadata = NG_biomarker_metadata %>%
 setdiff(ukb_metabo_vars$tmpID,NG_biomarker_metadata$tmpID)
 intersect(names(ukb_metabo_vars),names(NG_biomarker_metadata))
 
-ukb_metabo_vars = merge(ukb_metabo_vars,NG_biomarker_metadata)
+ukb_metabo_vars2 = merge(ukb_metabo_vars,NG_biomarker_metadata)
 # unlist(lapply(lapply(ukb_metabo_vars$alternative_names,str_length),which.min))
 # sapply(ukb_metabo_vars$alternative_names, function(x) x[which.min(str_length(x))])
 
-write_tsv(ukb_metabo_vars,"metadata/NG_UKB_mathced_metaboIDs.tsv")          
+write_tsv(ukb_metabo_vars2 %>% 
+            dplyr::select(-tmpID,-unit,-alternative_names,-unit) %>%
+            arrange(`Field ID`),
+          "metadata/NG_UKB_mathced_metaboIDs2.tsv")          

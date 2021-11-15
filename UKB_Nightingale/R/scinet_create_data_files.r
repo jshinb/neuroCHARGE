@@ -546,3 +546,15 @@ testing <- function(){
     is.identical = c(is.identical,identical(metabo_data[[ci]],metabo_data1[[ci]]))
   }
 }
+# for high/low fasting time-stratified
+cov_lowfast = subset(covdata,fasting_time <=3)
+cov_highfast = subset(covdata,fasting_time >3)
+write_tsv(cov_lowfast,file="covdata_low_fasting_time.tsv")#4642
+write_tsv(cov_highfast,file="covdata_high_fasting_time.tsv")#3163
+# prop.table(tab <- table(covdata$fasting_time>3 , covdata$sex),margin=1)
+#
+write_tsv(subset(brain_data,eid %in% cov_lowfast$eid),file="brain_data_low_fasting_time.tsv")
+write_tsv(subset(brain_data,eid %in% cov_highfast$eid),file="brain_data_high_fasting_time.tsv")
+#
+write_tsv(subset(metabo_data,eid %in% cov_lowfast$eid),file="metabo_data_low_fasting_time.tsv")
+write_tsv(subset(metabo_data,eid %in% cov_highfast$eid),file="metabo_data_high_fasting_time.tsv")
